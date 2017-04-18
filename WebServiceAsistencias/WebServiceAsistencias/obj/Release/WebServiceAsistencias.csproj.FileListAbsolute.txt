@@ -1,0 +1,234 @@
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll.config
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.pdb
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.dll
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.dll
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.dll
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.dll
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.xml
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.xml
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.xml
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.xml
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Razor.resources.dll
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.csprojResolveAssemblyReference.cache
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.dll
+C:\Users\Roberto Salazar\Documents\Visual Studio 2013\Projects\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.pdb
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll.config
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.pdb
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.dll
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.dll
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.dll
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.dll
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.xml
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.xml
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.xml
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.xml
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Razor.resources.dll
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.csprojResolveAssemblyReference.cache
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.dll
+C:\Users\Roberto Salazar\Downloads\mmmm\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.pdb
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll.config
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.pdb
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.dll
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.dll
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.dll
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.dll
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.xml
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.xml
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.xml
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.xml
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Razor.resources.dll
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.csprojResolveAssemblyReference.cache
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.dll
+C:\Users\Roberto Salazar\Downloads\update\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.pdb
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll.config
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.pdb
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.dll
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.dll
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.dll
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.dll
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.xml
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.xml
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.xml
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.xml
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Razor.resources.dll
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.csprojResolveAssemblyReference.cache
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.dll
+C:\Users\Roberto Salazar\Desktop\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.pdb
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll.config
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.pdb
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Mvc.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.xml
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.xml
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.xml
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.xml
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Mvc.xml
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Razor.resources.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.csprojResolveAssemblyReference.cache
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\webServiceOficial\mmmm\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.pdb
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll.config
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.pdb
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Mvc.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.xml
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.xml
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.xml
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.xml
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Mvc.xml
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Razor.resources.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.csprojResolveAssemblyReference.cache
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.dll
+C:\Users\Roberto\Desktop\Ing.Encompu\ICsemestre4\ComunidadMoviles\NuevaApp\Nueva carpeta\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.pdb
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll.config
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.pdb
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.dll
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Mvc.dll
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.dll
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.dll
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.dll
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.xml
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.xml
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.xml
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.xml
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Mvc.xml
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Razor.resources.dll
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.csprojResolveAssemblyReference.cache
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.dll
+C:\Users\Andres\Documents\Documents\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.pdb
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll.config
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.pdb
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Mvc.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Mvc.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Razor.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Deployment.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Razor.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Helpers.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Mvc.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.csprojResolveAssemblyReference.cache
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\Proyecto de android\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.pdb
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.csprojResolveAssemblyReference.cache
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.pdb
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll.config
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.pdb
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Mvc.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\Microsoft.Web.Infrastructure.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Mvc.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\Microsoft.Web.Infrastructure.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Razor.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Deployment.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Razor.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Helpers.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Mvc.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll.config
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.pdb
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Mvc.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\Microsoft.Web.Infrastructure.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Mvc.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\Microsoft.Web.Infrastructure.xml
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Razor.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Deployment.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Razor.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Helpers.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Mvc.resources.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.csprojResolveAssemblyReference.cache
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.dll
+R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.pdb

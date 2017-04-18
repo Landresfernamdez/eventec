@@ -1,0 +1,12 @@
+form{
+    margin: 50 auto;
+}
+
+#LoginDiv{
+    width: 40%;
+    height: 60%;
+}
+
+#loginBody{
+    background: white;
+}

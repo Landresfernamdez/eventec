@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="loginModule">
+<head>
+    <meta charset="UTF-8">
+    <title>EvenTec</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Angular-ui-calendar -->
+    <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="plugins/animate-css/login.css">
+      <link rel="stylesheet"  href="assets/css/login.css">
+
+
+    <!-- Bootstrap Core Css 
+    <link href=plugins/bootstrap/css/bootstrap.css" rel="stylesheet">-->
+
+    <!-- Waves Effect Css -->
+    <link href="plugins/node-waves/waves.css" rel="stylesheet" />
+    <!-- Custom Css -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="assets/css/themes/theme-blue.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/mediaQueries.css">
+
+</head>
+
+<body ng-controller="loginController">
+                <nav class="navbar white">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                            <a href="javascript:void(0);" class="bars"></a>
+                            <a class="navbar-brand " >
+                                <img src="assets/images/TEC-logo-blanco.png">
+                            </a>
+
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbar-collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <!-- Call Search -->
+
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+
+                <div  class="center">
+                            <div class="login-form">
+                                <img src="assets/images/logo.png" alt="logo" width="200" height="200" id="logo">
+                                <div class="form-group ">
+                                    <input type="text" class="form-control"  ng-model="ida">
+                                    <i class="fa fa-user"></i>
+                            </div>
+                            <div class="form-group log-status">
+                                <input type="password" class="form-control"  ng-model="pass">
+                                <i class="fa fa-lock"></i>
+                            </div>
+                                  <span class="alert">Invalid Credentials</span>
+                                  <a class="link" href="#">Lost your password?</a>
+                                  <button type="button" class="log-btn" ng-click="doLogin(id,pass)" >Log in</button>
+                            </div>
+                </div>
+
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="plugins/base64/base64.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="loginController.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<div class="container-fluid">
+
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2 class="tecTitles">
+                       Reservar Transporte
+                    </h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);">Editar</a></li>
+                                <li><a href="javascript:void(0);">Eliminar</a></li>
+                                <li><a href="javascript:void(0);">Detalles</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <form ng-submit="sendReservation()">
+
+                        <label for="place">Lugar</label>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input ng-model="reserve.DestinationPlace" type="text" id="place" class="form-control" placeholder="Lugar">
+                            </div>
+                        </div>
+                        <label for="place">Encargado</label>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input ng-model="reserve.Responsable" type="text" id="Responsable" class="form-control" placeholder="Lugar">
+                            </div>
+                        </div>
+                        <label for="place">Pasajeros</label>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input ng-model="reserve.Pasenger" type="number" id="Pasenger" class="form-control" placeholder="Lugar">
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <label >Hora de Salida</label>
+                                <input ng-model="departureHour" type="time"  class="form-control" placeholder="">
+
+                            </div>
+                            <div class="col-sm-6">
+                                <label >Hora de Llegada</label>
+                                <input ng-model="arrivalHour" type="time"  class="form-control" placeholder="">
+
+                            </div>
+                        </div>
+
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <label >Fecha de Salida</label>
+                                <input ng-model="departureDate" type="date" class="form-control" placeholder="Enter your email address">
+
+                            </div>
+                            <div class="col-sm-6">
+                                <label >Fecha de Llegada</label>
+                                <input ng-model="arrivalDate" name="arrivalDate" type="date" class="form-control" placeholder="Enter your email address">
+
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <label >Auto</label>
+                                <select class="form-control show-tick" ng-model="reservation.VehicleID">
+                                    <option value="">Placa</option>
+
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label >Asignarme</label>
+                                <select class="form-control show-tick">
+                                    <option value="">Chofer</option>
+                                    <option value=1>SI</option>
+                                    <option value=0>NO</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-danger m-t-18 waves-effect">Reservar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Vertical Layout -->
+</div>

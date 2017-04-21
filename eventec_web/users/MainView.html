@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="userModule">
+<html ng-app="mainModule">
 
 <head>
     <meta charset="UTF-8">
@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="../assets/css/mediaQueries.css">
 </head>
 
-<body class="theme-blue">
+<body class="theme-blue" ng-controller="mainController">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -276,7 +276,7 @@
     <!-- #Top Bar -->
     <!-- Se enlaza el controller al sidebar -->
     <!-- en el se encuentran los datos de usuario que aparecen en el sidebar -->
-    <section ng-controller="mainCtrl">
+    <section >
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- Informacion del usuario -->
@@ -286,8 +286,7 @@
                 </div>
                 <div class="info-container">
                     <!-- Menu de cierre de session -->
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{user}}</div>
-                    <div class="email">{{email}}</div>
+                    <div class="id" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ida}}</div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
@@ -326,7 +325,7 @@
                         </a>
                     </li>
                     <li class="tecTitles">
-                        <a href="#/user/reserves/" onclick="closeSideBar()">
+                        <a  ng-click="jumpGetevents()" >
                             <i class="material-icons">description</i>
                             <span>Mis Eventos</span>
                         </a>
@@ -361,22 +360,9 @@
     <script type="text/javascript" src="../bower_components/angular-resource/angular-resource.min.js"></script>
     <script type="text/javascript" src="../bower_components/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="../bower_components/ui-listView/src/"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Funciones y variables compartidas entre madulos  -->
-    <script src="../shared/common.js"></script>
-    <!-- app Js -->
-    <script src="app.js"></script>
-    <!-- services -->
-    <script src="services.js"></script>
-    <!-- main controller Js -->
-    <script src="controllers/mainCtrl.js"></script>
-    <!-- dashboard controller Js -->
-    <script src="controllers/dashboardCtrl.js"></script>
-    <!-- reservationCreate controller Js -->
-    <script src="controllers/reservationsCtrl.js"></script>
-    <!-- reservationCreate controller Js -->
-    <script src="controllers/fleetCtrl.js"></script>
-    <!-- reservationCreate controller Js -->
-    <script src="controllers/myreservesCtrl.js"></script>
 
     <!-- Jquery Core Js -->
     <script src="../plugins/jquery/jquery.min.js"></script>
@@ -401,7 +387,7 @@
 
     <!-- Custom Js -->
     <script src="../assets/js/admin.js"></script>
-
+     <script src="controllers/main.js"></script>
 </body>
 
 </html>

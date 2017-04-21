@@ -26,7 +26,7 @@ angular.module('loginModule',["ngRoute","ngResource"])
                 url: "http://172.24.40.241/Administradores/Administrador?ida="+ida+"&pass="+pass
             }).then(function mySucces(response){
                 var estado=response.data;
-                if(estado.success){
+                if(estado.success==true){
                     console.log(response.data);
                     window.location.href = ('users/MainView.html');
                 }

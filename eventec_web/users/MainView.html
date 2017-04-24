@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="mainModule">
+<html ng-app="userModule">
 
 <head>
     <meta charset="UTF-8">
@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="../assets/css/mediaQueries.css">
 </head>
 
-<body class="theme-blue" ng-controller="mainController">
+<body class="theme-blue" >
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -325,7 +325,7 @@
                         </a>
                     </li>
                     <li class="tecTitles">
-                        <a  ng-click="jumpGetevents()" >
+                        <a  href="#/users/activities"ng-click="jumpGetevents()" >
                             <i class="material-icons">description</i>
                             <span>Mis Eventos</span>
                         </a>
@@ -363,7 +363,11 @@
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Funciones y variables compartidas entre madulos  -->
-
+    <script src="app.js"></script>
+    <script src="services.js"></script>
+    <script src="controllers/main.js"></script>
+    <script src="controllers/activitiesController.js"></script>
+     
     <!-- Jquery Core Js -->
     <script src="../plugins/jquery/jquery.min.js"></script>
 
@@ -387,7 +391,6 @@
 
     <!-- Custom Js -->
     <script src="../assets/js/admin.js"></script>
-     <script src="controllers/main.js"></script>
 </body>
 
 </html>

@@ -21,7 +21,7 @@ angular.module('loginModule',["ngRoute","ngResource"])
 
             $http({
                 method:"GET",//
-                url: "http://172.24.40.241/Administradores/Administrador?ida="+ida+"&pass="+pass
+                url: "http://172.24.45.39/Administradores/Administrador?ida="+ida+"&pass="+pass
             }).then(function mySucces(response){
                 var estado=response.data;
                 if(estado.success==true){

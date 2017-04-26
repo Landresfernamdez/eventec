@@ -28,7 +28,7 @@ angular.module('userModule')
             
             var ida=localStorage.getItem("session.user");
             $http.get(
-                "http://172.24.40.241/Activities/Activity/"+ida
+                "http://172.24.45.39/Activities/Activity/"+ida
             ).success(function successCallback(response){
                 // Esta funcion es la que se ejecuta
                 // cuando la peticion es exitosa

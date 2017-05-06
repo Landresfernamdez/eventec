@@ -36,13 +36,15 @@ namespace WebServiceAsistencias.Models
                 admi.cedula = reader.GetString(0);
                 admi.contraseña = reader.GetString(1);
                 admi.tipoCuenta = reader.GetString(2);
+                admi.success = false;
             }
             reader.Close();
             if (admi != null)
             {
-                if (admi.contraseña.Equals(pass2) && admi.tipoCuenta.Equals("a"))
+                if (admi.tipoCuenta.Equals("a"))
                 {
                     admi.success = true;
+                    admi.token = "Andresf12serviceBeach";
                     return admi;
                 }
             }

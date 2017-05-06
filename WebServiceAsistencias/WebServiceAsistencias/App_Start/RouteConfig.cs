@@ -9,7 +9,7 @@ namespace WebServiceAsistencias
 {
     public class RouteConfig
     {
-        public static string cadenaConexion = @"Data Source=172.24.47.244;Initial Catalog=EvenTEC;User Id=sa;Password=86374844botas";
+        public static string cadenaConexion = @"Data Source=192.168.43.112;Initial Catalog=EvenTEC;User Id=sa;Password=86374844botas";
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
@@ -23,6 +23,15 @@ namespace WebServiceAsistencias
                     action = "Evento",
                     id = UrlParameter.Optional,
                     pass = UrlParameter.Optional
+                }
+                );
+            routes.MapRoute(
+                "AccesoActivity",
+                "Activities",
+                new
+                {
+                    controller = "Activities",
+                    action = "Activity"
                 }
                 );
             routes.MapRoute(

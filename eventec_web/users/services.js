@@ -22,32 +22,56 @@ angular.module('userModule')
     objetos json
     */
 
-    .factory('GetActivities',function($http){
+    .factory('OperationsActivities',function($http){
 
-        var respuesta = function(callback){
-            
-            var ida=localStorage.getItem("session.user");
-            $http.get(
-                "http://172.24.41.180/Activities/Activity/"+ida
-            ).success(function successCallback(response){
-                // Esta funcion es la que se ejecuta
-                // cuando la peticion es exitosa
-                //response es la variable en la que se devuelven los datos
-                //En este caso particular nuestro response esta estructurado de manera que
-                //los datos que interesan estan en el atributo content
-                //Se devuelve un callback el cual se ejecuta en el controller
-                console.log(response);
-                callback(response);
-            }).error(function errorCallback(response) {
-                //En caso de fallo en la peticion entra en esta funcion
-                console.log("fallo", response);
-                callback(response);
-            });
-        };
-        return {respuesta: respuesta};
+        var respuesta={
+            getActivity: function(callback){
+                var ida=localStorage.getItem("session.user");
+                $http.get(
+                    "http://192.168.43.112/Activities"
+                ).success(function successCallback(response){
+                    // Esta funcion es la que se ejecuta
+                    // cuando la peticion es exitosa
+                    //response es la variable en la que se devuelven los datos
+                    //En este caso particular nuestro response esta estructurado de manera que
+                    //los datos que interesan estan en el atributo content
+                    //Se devuelve un callback el cual se ejecuta en el controller
+                    console.log(response);
+                    callback(response);
+                }).error(function errorCallback(response) {
+                    //En caso de fallo en la peticion entra en esta funcion
+                    console.log("fallo", response);
+                    callback(response);
+                });
+            },
+            insertActivity:function(activity,callback){
+                 $http({
+                    method  : 'POST',
+                    url     : 'http://192.168.43.112/Activities',
+                    data    : activity
+
+                })
+                    .success(function(data) {
+                        if (data.errors) {
+                            // Showing errors.
+                            console.log("set message error", data.errors)
+                            alert("Se ha producido un error en la insercion");
+                            callback(false);
+                        } else {
+                            alert("La insercion fue exitosa");
+                            callback(true);
+
+
+
+                        }
+                    });
+
+            }
+
+        }
+        return respuesta;
 
     });
-
 
  /*   .factory('MessageResource', function ($http) {
         

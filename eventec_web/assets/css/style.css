@@ -2517,7 +2517,10 @@ section.content {
 .btn-success:hover,
 .btn-success:active,
 .btn-success:focus {
-  background-color: #2b982b !important; }
+  background-color: #2b982b !important;
+  margin-left: 970px;
+  padding: 0px;
+ }
 
 .btn-primary,
 .btn-primary:hover,

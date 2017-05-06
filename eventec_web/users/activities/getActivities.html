@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
         <div class="col-md-12">
         <h4>Actividades</h4>
@@ -8,8 +8,7 @@
               <table id="mytable" class="table table-bordred table-striped">
                    
                    <thead>
-                   
-                   <th><input type="checkbox" id="checkall" /></th>
+              
                    <th id="name">Nombre</th>
                    <th id="place">Lugar</th>
                    <th id="date">Fecha</th>
@@ -21,7 +20,6 @@
     <tbody>
       
             <tr ng-repeat="activity in listaActivities">
-              <td><input type="checkbox" class="checkthis"/></td>
               <td >{{activity.nombre}}</td>
               <td>{{activity.lugar}}</td>
               <td>{{activity.fecha}}</td>
@@ -29,46 +27,108 @@
               <td>{{activity.horaInicio}}</td> 
               <td>{{activity.horaFinal}}</td> 
               <td>{{activity.descripcion}}</td> 
-              <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-              
-              <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+              <td><p data-placement="top" data-toggle="tooltip" title="Edit">
+                <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+              <td><p data-placement="top" data-toggle="tooltip" title="Delete">
+                <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
             </tr>
-        
     </tbody>
-        
+
+       
 </table>
 
+
+        <div>
+         <button  type="button" class="btn btn-success btn-circle btn-lg"><span class="glyphicon glyphicon-plus" data-title="Add" data-toggle="modal" data-target="#add"></span></button>
+        </div>
+
+
+<!--Vista de editar-->        
 <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
       <div class="modal-dialog">
-    <div class="modal-content">
-          <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-        <h4 class="modal-title custom_align" id="Heading">Edit Acvivity</h4>
-      </div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                    <h4 class="modal-title custom_align" id="Heading">Edit Acvivity</h4>
+                </div>
           <div class="modal-body">
-          <div class="form-group">
-        <input class="form-control " type="text" placeholder="Mohsin">
-        </div>
-        <div class="form-group">
-        
-        <input class="form-control " type="text" placeholder="wwwwwwwww">
-        </div>
-        <div class="form-group">
-        <textarea rows="2" class="form-control" placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
-    
-        
-        </div>
-      </div>
-          <div class="modal-footer ">
-        <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
-      </div>
-        </div>
+                  <div class="form-group">
+                    <input class="form-control " type="text" placeholder="Nombre" ng-model="activity.nombre">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control " type="text" placeholder="lugar"ng-model="activity.lugar">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control " type="text" placeholder="fecha"ng-model="activity.fecha">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control " type="text" placeholder="cupo"ng-model="activity.cupo">
+                  </div>
+                  <div class="form-group">
+                  <input class="form-control " type="text" placeholder="Hora de inicio"ng-model="activity.horaInicio">
+                    </div>
+                  <div class="form-group">
+                    <input class="form-control " type="text" placeholder="Hora de final"ng-model="activity.horaFinal">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control " type="text" placeholder="Descripcion"ng-model="activity.descripcion">
+                  </div>
+
+                  <div class="modal-footer ">
+                    <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign" ng-click=""></span> Update</button>
+                  </div>
+            </div>
     <!-- /.modal-content --> 
-  </div>
+        </div>
       <!-- /.modal-dialog --> 
     </div>
-    
-    
+</div>
+    <!--Vista de añadir-->        
+<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="add" aria-hidden="true">
+      <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                    <h4 class="modal-title custom_align" id="Heading">Add Activity</h4>
+                </div>
+                   <div class="modal-body" ng-controller="activitiesController">
+
+                      <div class="form-group">
+                        <input class="form-control " type="text" placeholder="id actividad Act-####" ng-model="activity.idActividad">
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control " type="text" placeholder="Nombre" ng-model="activity.nombre">
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control " type="text" placeholder="Descripcion"ng-model="activity.descripcion">
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control " type="text" placeholder="fecha"ng-model="activity.fecha">
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control " type="text" placeholder="cupo"ng-model="activity.cupo">
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control " type="text" placeholder="lugar"ng-model="activity.lugar">
+                      </div>
+                      <div class="form-group">
+                      <input class="form-control " type="text" placeholder="Hora de inicio"ng-model="activity.horaInicio">
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control " type="text" placeholder="Hora de final"ng-model="activity.horaFinal">
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control " type="text" placeholder="duracion"ng-model="activity.duracion">
+                      </div>
+                      <div class="modal-footer " >
+                          <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign" ng-click="postActivities(activity)"></span>add</button>
+                      </div>
+                </div>
+    <!-- /.modal-content --> 
+        </div>
+      <!-- /.modal-dialog --> 
+    </div>
+</div>
     
     <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
       <div class="modal-dialog">
@@ -83,7 +143,7 @@
        
       </div>
         <div class="modal-footer ">
-        <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+        <button type="button" class="btn btn-primary" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
         <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
       </div>
         </div>

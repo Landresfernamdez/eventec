@@ -232,3 +232,29 @@ R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario
 R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.csprojResolveAssemblyReference.cache
 R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.dll
 R:\Documentos\ANDRES lV Semestre\Comunidad de moviles\AsisTEC\Aplicacion usuario\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.pdb
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll.config
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.pdb
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.dll
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Mvc.dll
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.dll
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.dll
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.dll
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.dll
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\Microsoft.Web.Infrastructure.dll
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Razor.xml
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.xml
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Deployment.xml
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Webpages.Razor.xml
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Helpers.xml
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\System.Web.Mvc.xml
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\Microsoft.Web.Infrastructure.xml
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Razor.resources.dll
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.resources.dll
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Deployment.resources.dll
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Webpages.Razor.resources.dll
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Helpers.resources.dll
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\bin\es\System.Web.Mvc.resources.dll
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.csprojResolveAssemblyReference.cache
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.dll
+R:\Documentos\ANDRES V\Comunidad\EvenTEC WEB\Eventec\WebServiceAsistencias\WebServiceAsistencias\obj\Release\WebServiceAsistencias.pdb

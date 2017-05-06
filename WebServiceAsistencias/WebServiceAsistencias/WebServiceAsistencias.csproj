@@ -85,10 +85,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ActivitiesController.cs" />
     <Compile Include="Controllers\AdministradoresController.cs" />
     <Compile Include="Controllers\PersonasController.cs" />
     <Compile Include="Controllers\RegistersController.cs" />
     <Compile Include="Controllers\RegistrosController.cs" />
+    <Compile Include="Models\ActivitiesManager.cs" />
     <Compile Include="Models\AdministradorManager.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\PersonaManager.cs" />

@@ -11,5 +11,6 @@ namespace WebServiceAsistencias.Models
           public string contraseña { get; set; }
           public string tipoCuenta { get; set; }
           public Boolean success { get; set; }
+          public string token { get; set; }
     }
 }

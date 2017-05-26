@@ -6,6 +6,10 @@ angular.module('userModule',['ngRoute'])
                         templateUrl:'activities/getActivities.html',
                         controller: 'activitiesController'
                                              })
+                    .when("/users/events",{
+                        templateUrl:'Eventos/getEventos.html',
+                        controller: 'eventosController'
+                                             })
 
     }
 ]);

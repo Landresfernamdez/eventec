@@ -67,11 +67,11 @@ angular.module('userModule')
                     });
 
             },
-            deleteActivities:function(id,callback){
+            deleteActivities:function(actividad,callback){
                  $http({
                     method  : 'POST',
                     url     : 'http://localhost/Activities',
-                    data    : {ida:id}
+                    data    : actividad
 
                 })
                     .success(function(data) {

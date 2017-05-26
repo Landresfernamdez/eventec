@@ -25,14 +25,15 @@ angular.module('userModule')
 					console.log(res);
 					$scope.listaActivities=res;
 					console.log($scope.listaActivities);
-					window.location.href="#/users/activities";
+				    $location.path('contactos');
+				    $route.reload();
 				});
 			}
 		});
 	}
-	$scope.delete=function deleteActivity(id){
-		console.log("imprime:"+$scope.activity.idActividad);
-		OperationsContacts.deleteActivities($scope.contacto.idActividad,function(response){
+	$scope.delete=function deleteActivity(actividad){
+		console.log("imprime:"+$scope.activity);
+		OperationsActivities.deleteActivities($scope.activity,function(response){
 				if(response.success){
 				    $location.path('contactos');
 				    $route.reload();
@@ -40,4 +41,11 @@ angular.module('userModule')
 		});
 
 	};
+
+	$scope.actualizarActividad=function actualizarActividad(actividad){
+		$scope.activity=actividad;
+		console.log("actualiza:");
+		console.log(actividad);
+
+	}
 });

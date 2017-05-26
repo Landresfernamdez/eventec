@@ -1,5 +1,5 @@
 angular.module('loginModule',["ngRoute","ngResource"])
-    .controller('loginController', function($scope,$http) {
+    .controller('loginController', function($scope,$http,$location) {
 
         // modelo de datos.
         $scope.ida = "";
@@ -21,7 +21,7 @@ angular.module('loginModule',["ngRoute","ngResource"])
 
             $http({
                 method:"GET",//
-                url: "http://192.168.43.112/Administradores/Administrador?ida="+ida+"&pass="+pass
+                url: "http://localhost/Administradores/Administrador?ida="+ida+"&pass="+pass
             }).then(function mySucces(response){
                 var estado=response.data;
                 if(estado.success==true){

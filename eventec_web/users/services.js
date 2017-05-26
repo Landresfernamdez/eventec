@@ -22,13 +22,13 @@ angular.module('userModule')
     objetos json
     */
 
-    .factory('OperationsActivities',function($http){
+    .factory('OperationsActivities',function($http,$location){
 
         var respuesta={
             getActivity: function(callback){
                 var ida=localStorage.getItem("session.user");
                 $http.get(
-                    "http://192.168.43.112/Activities"
+                    "http://localhost/Activities"
                 ).success(function successCallback(response){
                     // Esta funcion es la que se ejecuta
                     // cuando la peticion es exitosa
@@ -47,7 +47,7 @@ angular.module('userModule')
             insertActivity:function(activity,callback){
                  $http({
                     method  : 'POST',
-                    url     : 'http://192.168.43.112/Activities',
+                    url     : 'http://localhost/Activities',
                     data    : activity
 
                 })
@@ -59,6 +59,29 @@ angular.module('userModule')
                             callback(false);
                         } else {
                             alert("La insercion fue exitosa");
+                            callback(true);
+
+
+
+                        }
+                    });
+
+            },
+            deleteActivities:function(id,callback){
+                 $http({
+                    method  : 'POST',
+                    url     : 'http://localhost/Activities',
+                    data    : {ida:id}
+
+                })
+                    .success(function(data) {
+                        if (data.errors) {
+                            // Showing errors.
+                            console.log("set message error", data.errors)
+                            alert("Se ha producido un error en la eliminacion");
+                            callback(false);
+                        } else {
+                            alert("La eliminacion fue exitosa");
                             callback(true);
 
 

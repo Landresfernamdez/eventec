@@ -1,5 +1,5 @@
 angular.module('userModule')
-.controller('activitiesController',function($scope,OperationsActivities){
+.controller('activitiesController',function($scope,OperationsActivities,$location){
 	console.log("entro");
 	$scope.activity={
 		idActividad:"",
@@ -25,10 +25,19 @@ angular.module('userModule')
 					console.log(res);
 					$scope.listaActivities=res;
 					console.log($scope.listaActivities);
+					window.location.href="#/users/activities";
 				});
-				window.location.href = ('activities');
 			}
 		});
-
 	}
+	$scope.delete=function deleteActivity(id){
+		console.log("imprime:"+$scope.activity.idActividad);
+		OperationsContacts.deleteActivities($scope.contacto.idActividad,function(response){
+				if(response.success){
+				    $location.path('contactos');
+				    $route.reload();
+				}
+		});
+
+	};
 });

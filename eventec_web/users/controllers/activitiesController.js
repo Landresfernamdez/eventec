@@ -1,6 +1,7 @@
 angular.module('userModule')
 .controller('activitiesController',function($scope,OperationsActivities,$location){
 	console.log("entro");
+	
 	$scope.activity={
 		idActividad:"",
 		nombre:"",

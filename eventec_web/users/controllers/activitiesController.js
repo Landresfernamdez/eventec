@@ -1,7 +1,6 @@
 angular.module('userModule')
-.controller('activitiesController',function($scope,OperationsActivities,$location){
-	console.log("entro");
-	
+.controller('activitiesController',function($scope,OperationsActivities,$location,$route){
+
 	$scope.activity={
 		idActividad:"",
 		nombre:"",
@@ -16,27 +15,32 @@ angular.module('userModule')
 	$scope.getlistaActivities =OperationsActivities.getActivity(function(res){
 		console.log(res);
 		$scope.listaActivities=res;
-		console.log($scope.listaActivities);
 	});
 	$scope.postActivities=function(activity){
 		console.log(activity);
 		OperationsActivities.insertActivity($scope.activity,function(res){
 			if(res){
-				OperationsActivities.getActivity(function(res){
-					console.log(res);
 					$scope.listaActivities=res;
-					console.log($scope.listaActivities);
-				    $location.path('contactos');
+				    $location.path('activities');
 				    $route.reload();
-				});
 			}
 		});
 	}
+    $scope.putActivities=function(activity){
+        console.log(activity);
+        OperationsActivities.updateActivity($scope.activity,function(res){
+            if(res){
+            	$scope.listaActivities=res;
+                $location.path('activities');
+                $route.reload();
+            }
+        });
+    }
 	$scope.delete=function deleteActivity(actividad){
-		console.log("imprime:"+$scope.activity);
 		OperationsActivities.deleteActivities($scope.activity,function(response){
-				if(response.success){
-				    $location.path('contactos');
+				if(response){
+					$scope.listaActivities=response;
+				    $location.path('activities');
 				    $route.reload();
 				}
 		});

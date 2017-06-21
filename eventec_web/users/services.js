@@ -52,7 +52,7 @@ angular.module('userModule')
 
                 })
                     .success(function(data) {
-                        if (data.errors) {
+                        if (data.errors){
                             // Showing errors.
                             console.log("set message error", data.errors)
                             alert("Se ha producido un error en la insercion");
@@ -61,16 +61,39 @@ angular.module('userModule')
                             alert("La insercion fue exitosa");
                             callback(true);
 
-
-
                         }
                     });
+
+            },
+            updateActivity:function(activity,callback){
+                $http({
+                    method  : 'POST',
+                    url     : 'http://localhost/ActivitiesUpdate',
+                    data    : activity
+
+                })
+                    .success(function(data) {
+                        if (data.errors){
+                            // Showing errors.
+                            console.log("set message error", data.errors)
+                            alert("Se ha producido un error en la actualizacion");
+                            callback(false);
+                        } else {
+                            alert("La actualizacion fue exitosa");
+                            callback(true);
+
+                        }
+                    }).error(function(data) {
+                    //En caso de fallo en la peticion entra en esta funcion
+                    alert("Se ha producido un error en la actualizacion"+data);
+                    callback({success: false});
+                });
 
             },
             deleteActivities:function(actividad,callback){
                  $http({
                     method  : 'POST',
-                    url     : 'http://localhost/Activities',
+                    url     : 'http://localhost/ActivitiesDelete',
                     data    : actividad
 
                 })
@@ -83,9 +106,6 @@ angular.module('userModule')
                         } else {
                             alert("La eliminacion fue exitosa");
                             callback(true);
-
-
-
                         }
                     });
 

@@ -1,0 +1,156 @@
+<div class="container-fluid" ng-controller="eventosController">
+
+    <!-- New event -->
+    <div class="modal fade modal-margin" id="defaultModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <form class="modal-content"  >
+                <div class="modal-header bagTecBlue">
+                    <h4 class=" whiteText" id="defaultModalLabel">Crear Evento</h4>
+                </div>
+                <div class="modal-body" >
+                    <label for="idEvento">Id Evento</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input ng-model="event.idEvento" type="text" id="idEvento" class="form-control" placeholder="Ev-####">
+                        </div>
+                    </div>
+                    <label for="nombreEvento">Nombre</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input ng-model="event.nombre" type="text" id="nombreEvento" class="form-control" placeholder="Nombre Evento">
+                        </div>
+                    </div>
+                    <label for="descripcion">Descripcion</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input ng-model="event.descripcion" type="text" id="descripcion" class="form-control" placeholder="Descripcion del evento">
+                        </div>
+                    </div>
+                    <label for="fechaInicio">Fecha de Inicio del Evento</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input ng-model="event.fechaInicio" type="date" id="fechaInicio" class="form-control" placeholder="Seleccione la Fecha Inicio">
+                        </div>
+                    </div>
+                    <label for="fechaFinal">Fecha de Final del Evento</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input ng-model="event.fechaFinal" type="date" id="fechaFinal" class="form-control" placeholder="Seleccione la Fecha Final">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal" ng-click="crearEvento()">Crear</button>
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- end new  event -->
+    <div class="card" >
+        <div class="header">
+            <h2 >Eventos</h2>
+            <div class="header-dropdown m-r--5 ">
+                <a class="btn-floating btn-sm " data-toggle="modal" data-target="#defaultModal"><i class="material-icons" style="cursor:pointer">add</i></a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="modal fade modal-margin" id="ModalEditar" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <form class="modal-content"  >
+                <div class="modal-header bagTecBlue">
+                    <h4 class=" whiteText" id="ModalEditarEventos">Editar Evento</h4>
+                </div>
+                <div class="modal-body" >
+                    <label for="idEventoE">Id Evento</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input ng-model="event.idEvento" type="text" id="idEventoE" class="form-control" placeholder="Ev-0000">
+                        </div>
+                    </div>
+                    <label for="nombreEventoEdit">Nombre</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input ng-model="event.nombre" type="text" id="nombreEventoEdit" class="form-control">
+                        </div>
+                    </div>
+                    <label for="descripcionEdit">Descripcion</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input ng-model="event.descripcion" type="" id="descripcionEdit" class="form-control" >
+                        </div>
+                    </div>
+                    <label for="fechaInicioEdit">Fecha de Inicio del Evento</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input ng-model="event.fechaInicio" type="date" id="fechaInicioEdit" class="form-control" >
+                        </div>
+                    </div>
+                    <label for="fechaFinalEdit">Fecha de Final del Evento</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input ng-model="event.fechaFinal" type="date" id="fechaFinalEdit" class="form-control" placeholder="Seleccione la Fecha Final">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal" ng-click="actualizar()">Guardar</button>
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade modal-margin" id="ModalAsignar" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <form class="modal-content"  >
+                <div class="modal-header bagTecBlue">
+                    <h4 class=" whiteText" id="ModalAsignarEventos">Asignar Actividades</h4>
+                </div>
+                <div class="modal-body" >
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal" ng-click="asigActiv()">Guardar</button>
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row clearfix" >
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="evento in listaEventos">
+
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        {{evento.nombre}} <small>Inicia : {{evento.fechaInicio.substr(0,10)}} Finaliza : {{evento.fechaFinal.substr(0,10)}}</small>
+                    </h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a data-toggle="modal" data-target="#ModalAsignar">Asignar Actividades</a></li>
+                                <li><a data-toggle="modal" data-target="#ModalEditar" ng-click="cargarModal(evento)">Editar</a></li>
+                                <li><a ng-click="eliminar(evento)">Eliminar</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    {{evento.descripcion}}
+                </div>
+            </div>
+        </div>
+    <!-- #END# Task Info -->
+    <!-- Browser Usage -->
+
+</div>
+</div>

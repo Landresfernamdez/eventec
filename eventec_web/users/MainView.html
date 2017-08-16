@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Even TEC</title>
     <!-- Favicon-->
-    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
     <!-- Angular-ui-calendar -->
     <link rel="stylesheet" href="../bower_components/fullcalendar/dist/fullcalendar.css"/>
     <!-- Google Fonts -->
@@ -315,19 +315,19 @@
                     <li class="tecTitles">
                         <a href="#/events">
                             <i class="material-icons">assignment</i>
-                            <span>Crear</span>
+                            <span>Eventos</span>
                         </a>
                     </li>
                     <li class="tecTitles">
-                        <a href="#/user/fleet" >
+                        <a href="#/peoples" >
                             <i class="material-icons">directions_car</i>
-                            <span>Edecanes</span>
+                            <span>Personas</span>
                         </a>
                     </li>
                     <li class="tecTitles">
                         <a  href="#/activities">
                             <i class="material-icons">description</i>
-                            <span>Mis Actividades</span>
+                            <span>Actividades</span>
                         </a>
                     </li>
 
@@ -359,11 +359,14 @@
 
     <!-- Funciones y variables compartidas entre madulos  -->
     <script src="../assets/js/cookies.js"></script>
-    <script src="app.js"></script>
-    <script src="services.js"></script>
-    <script src="controllers/main.js"></script>
-    <script src="controllers/activitiesController.js"></script>
-     
+    <script src="../app.js"></script>
+    <script src="activities/activitiesServices.js"></script>
+    <script src="activities/activitiesController.js"></script>
+    <script src="eventos/eventosServices.js"></script>
+    <script src="eventos/eventosController.js"></script>
+
+    <script src="personas/personasServices.js"></script>
+    <script src="personas/personasController.js"></script>
     <!-- Jquery Core Js -->
     <script src="../plugins/jquery/jquery.min.js"></script>
 

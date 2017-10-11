@@ -49,6 +49,10 @@ angular.module('userModule')
             window.location.href = ('eventos/eventos.html');
         };
         $scope.crearEvento =function(){
+            var fechaI=$scope.event.fechaInicio.getFullYear()+"-"+$scope.event.fechaInicio.getMonth()+"-"+$scope.event.fechaInicio.getDate();
+            var fechaF=$scope.event.fechaFinal.getFullYear()+"-"+$scope.event.fechaFinal.getMonth()+"-"+$scope.event.fechaFinal.getDate();
+            $scope.event.fechaInicio=fechaI;
+            $scope.event.fechaFinal=fechaF;
             OperationsEventos.insertEvents($scope.event,function(res){
                 if(res){
                     OperationsEventos.getEvento(function(res){
@@ -88,9 +92,6 @@ angular.module('userModule')
         });
         $scope.postActivities=function(activity){
             $scope.activityofevent.idEvento=JSON.parse(localStorage.getItem("event.id"));
-            console.log($scope.activityofevent);
-            console.log("tipo:")
-            console.log(typeof $scope.activityofevent.idEvento)
             var fecha=$scope.activityofevent.fecha.getFullYear()+"-"+$scope.activityofevent.fecha.getMonth()+"-"+$scope.activityofevent.fecha.getDate();
             console.log("fecha:"+fecha);
             $scope.activityofevent.fecha=fecha;

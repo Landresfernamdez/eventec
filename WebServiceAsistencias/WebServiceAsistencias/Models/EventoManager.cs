@@ -85,9 +85,9 @@ namespace WebServiceAsistencias.Models
         {
             SqlConnection con = new SqlConnection(cadenaConexion);
             con.Open();
-            string sql = "INSERT INTO Evento(idEvento,nombre,descripcion,fechaInicio,fechaFinal) VALUES (@id,@name,@desc,@fechI,@fechF)";
+            //string sql = "INSERT INTO Evento(idEvento,nombre,descripcion,fechaInicio,fechaFinal) VALUES (@id,@name,@desc,@fechI,@fechF)";
+            string sql = "EXEC AddEvents @name,@desc,@fechI,@fechF";
             SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.Parameters.Add("@id", System.Data.SqlDbType.NVarChar).Value = evt.idEvento;
             cmd.Parameters.Add("@name", System.Data.SqlDbType.NVarChar).Value = evt.nombre;
             cmd.Parameters.Add("@desc", System.Data.SqlDbType.NVarChar).Value = evt.descripcion;
             cmd.Parameters.Add("@fechI", System.Data.SqlDbType.NVarChar).Value = evt.fechaInicio;
@@ -102,7 +102,7 @@ namespace WebServiceAsistencias.Models
         {
             SqlConnection con = new SqlConnection(cadenaConexion);
             con.Open();
-            string sql = "Update Evento set nombre=@name,descripcion = @desc,fechaInicio = @fechI,fechaFinal = @fechF where idEvento = @id; ";
+            string sql = "Update Evento set nombre=@name,descripcion = @desc,fechaInicio = @fechI,fechaFinal = @fechF where idEvento = @id;";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.Parameters.Add("@id", System.Data.SqlDbType.NVarChar).Value = evt.idEvento;
             cmd.Parameters.Add("@name", System.Data.SqlDbType.NVarChar).Value = evt.nombre;

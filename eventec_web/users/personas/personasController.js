@@ -3,7 +3,6 @@
  */
 angular.module('userModule')
     .controller('personasController',function($scope,OperationsPersonas,$location,$route){
-
         $scope.persona={
             cedula:"",
             nombre:"",
@@ -13,10 +12,6 @@ angular.module('userModule')
             edad:"",
             direccion:""
         };
-        function validar(e) {
-            tecla = (document.all) ? e.keyCode : e.which;
-            if (tecla==13) alert ('Has pulsado enter');
-        }
         $scope.getlistaPersonas =OperationsPersonas.getPersona(function(res){
             console.log(res);
             $scope.listaPersonas=res;

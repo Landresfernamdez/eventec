@@ -16,14 +16,48 @@ namespace WebServiceAsistencias.Controllers
             eventsManager = new EventoManager();
         }
 
-        public JsonResult Evento(string id, string pass, Usuario item)
+        public JsonResult Evento(string id,Event item)
         {
             switch (Request.HttpMethod)
             {
                 
                 case "GET":
                     return Json(eventsManager.ObtenerEvento(id), JsonRequestBehavior.AllowGet);
-                    
+
+
+            }
+            return Json(new { Error = true, Message = "Operación HTTP desconocida" });
+        }
+        public JsonResult EventosAdministradores(Event item)
+        {
+            switch (Request.HttpMethod)
+            {
+
+                case "GET":
+                    return Json(eventsManager.ObtenerEventosAdministradores(), JsonRequestBehavior.AllowGet);
+                case "POST":
+                    return Json(eventsManager.deleteEvento(item));
+
+            }
+            return Json(new { Error = true, Message = "Operación HTTP desconocida" });
+        }
+        public JsonResult EventosUpdate(Event item)
+        {
+            switch (Request.HttpMethod)
+            {
+                case "POST":
+                    return Json(eventsManager.modificarEvento(item));
+
+            }
+            return Json(new { Error = true, Message = "Operación HTTP desconocida" });
+        }
+        public JsonResult EventosAdd(Event item)
+        {
+            switch (Request.HttpMethod)
+            {
+                case "POST":
+                    return Json(eventsManager.InsertarEvento(item));
+
             }
             return Json(new { Error = true, Message = "Operación HTTP desconocida" });
         }

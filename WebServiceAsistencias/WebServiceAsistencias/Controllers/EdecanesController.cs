@@ -30,6 +30,17 @@ namespace WebServiceAsistencias.Controllers
 
             return Json(new { Error = true, Message = "Operación HTTP desconocida" });
         }
+        public JsonResult Edecanes(Usuario item)
+        {
+            switch (Request.HttpMethod)
+            {
+                case "GET":
+                    return Json(anfitrionesManager.ObtenerEdecanes(),
+                                JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new { Error = true, Message = "Operación HTTP desconocida" });
+        }
     }
 
     }

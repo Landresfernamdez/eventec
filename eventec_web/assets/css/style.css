@@ -2430,6 +2430,27 @@ section.content {
   top: 6px; }
 
 /* Buttons ===================================== */
+
+.buttonspecial {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.buttonspecial:hover {background-color: #3e8e41}
+
+.buttonspecial:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 .btn:focus {
   outline: none !important; }
 
@@ -2948,6 +2969,13 @@ section.content {
     position: relative;
     background-color: #140e39;
     border-bottom: 1px solid rgba(204, 204, 204, 0.35); }
+
+.card .headerr {
+  color: #ffffff;
+  float:right;
+  width: 20%;
+  background-color: #140e39;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.35); }
 
     .card .header .header-dropdown {
       position: absolute;
@@ -7733,3 +7761,20 @@ html.ie11 .dropdown-menu ul.menu li a {
 html.ie11 .bs-searchbox .form-control {
   width: 90%; }
 
+
+
+.padreparalelos {
+    display: inline-block;
+    background-color: #140e39;
+}
+.paraleloizq {
+    color: #fffdfd;
+    font-size: 1px;
+    display: inline-block;
+    float: left;
+  background-color: #140e39;
+}
+.paraleloder {
+    display: inline-block;
+    float: right;
+    background-color: #140e39;}

@@ -1417,6 +1417,7 @@ ul,
 ol {
   margin-top: 0;
   margin-bottom: 10px;
+  list-style-type: none;
 }
 ul ul,
 ol ul,
@@ -6760,5 +6761,9 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+li{
+  list-style-type: none;
+
 }
 /*# sourceMappingURL=bootstrap.css.map */

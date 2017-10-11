@@ -32,11 +32,8 @@ angular.module('loginModule',["ngRoute","ngResource"])
                     alert("Credenciales incorrectas");
                     console.log("Credenciales incorrectas");
                 }
-                
             });
         }
-        
-
         /**
          * Guarda la sesión en el almacenamiento local del navegador.
          * @param json JSON de origen.

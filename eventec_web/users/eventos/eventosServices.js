@@ -63,12 +63,8 @@ angular.module('userModule')
                     } else {
                         alert("La eliminacion fue exitosa");
                         callback(true);
-
-
-
                     }
                 });
-
         },insertEvents:function(events,callback){
             $http({
                 method  : 'POST',
@@ -76,7 +72,7 @@ angular.module('userModule')
                 data    : events
 
             })
-                .success(function(data) {
+                .success(function(data){
                     if (data.errors) {
                         // Showing errors.
                         console.log("set message error", data.errors)
@@ -85,8 +81,6 @@ angular.module('userModule')
                     } else {
                         alert("La insercion fue exitosa");
                         callback(true);
-
-
 
                     }
                 });
@@ -98,8 +92,8 @@ angular.module('userModule')
                 data    : events
 
             })
-                .success(function(data) {
-                    if (data.errors) {
+                .success(function(data){
+                    if (data.errors){
                         // Showing errors.
                         console.log("set message error", data.errors)
                         alert("Se ha producido un error en la update");
@@ -107,13 +101,95 @@ angular.module('userModule')
                     } else {
                         alert("La update fue exitosa");
                         callback(true);
-
-
-
                     }
                 }).error(function (data) {
                 console.log(data)
             });
+        /*Endpoints de actividades*/
+        },getActivity: function(id,callback){
+            $http.get(
+                "http://localhost/Activities/Activity?id="+id
+            ).success(function successCallback(response){
+                // Esta funcion es la que se ejecuta
+                // cuando la peticion es exitosa
+                //response es la variable en la que se devuelven los datos
+                //En este caso particular nuestro response esta estructurado de manera que
+                //los datos que interesan estan en el atributo content
+                //Se devuelve un callback el cual se ejecuta en el controller
+                console.log(response);
+                callback(response);
+            }).error(function errorCallback(response) {
+                //En caso de fallo en la peticion entra en esta funcion
+                console.log("fallo", response);
+                callback(response);
+            });
+        },
+        insertActivity:function(activity,callback){
+            $http({
+                method  : 'POST',
+                url     : 'http://localhost/ActivitiesAdd',
+                data    : activity
+
+            })
+                .success(function(data){
+                    if (data.errors) {
+                        // Showing errors.
+                        console.log("set message error", data.errors)
+                        alert("Se ha producido un error en la insercion");
+                        callback(false);
+                    } else {
+                        alert("La insercion fue exitosa");
+                        console.log("data");
+                        console.log(data);
+                        callback(true);
+
+                    }
+                });
+
+        },
+        updateActivity:function(activity,callback){
+            $http({
+                method  : 'POST',
+                url     : 'http://localhost/ActivitiesUpdate',
+                data    : activity
+
+            })
+                .success(function(data) {
+                    if (data.errors){
+                        // Showing errors.
+                        console.log("set message error", data.errors)
+                        alert("Se ha producido un error en la actualizacion");
+                        callback(false);
+                    } else {
+                        alert("La actualizacion fue exitosa");
+                        callback(true);
+
+                    }
+                }).error(function(data) {
+                //En caso de fallo en la peticion entra en esta funcion
+                alert("Se ha producido un error en la actualizacion"+data);
+                callback({success: false});
+            });
+
+        },
+        deleteActivities:function(actividad,callback){
+            $http({
+                method  : 'POST',
+                url     : 'http://localhost/ActivitiesDelete',
+                data    : actividad
+
+            })
+                .success(function(data) {
+                    if (data.errors) {
+                        // Showing errors.
+                        console.log("set message error", data.errors)
+                        alert("Se ha producido un error en la eliminacion");
+                        callback(false);
+                    } else {
+                        alert("La eliminacion fue exitosa");
+                        callback(true);
+                    }
+                });
 
         }
 

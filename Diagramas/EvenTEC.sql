@@ -30,9 +30,9 @@ create table Persona
 		nombre			varchar(20)			NOT NULL,
 		apellido1		varchar(20)			NOT NULL,
 		apellido2		varchar(20)			NOT NULL,
-		edad			smallint			NOT NULL,
+		edad			int			NOT NULL,
 		direccion		varchar(20)			NOT NULL,
-
+		estado          	varchar(1)          NOT NULL, 
 		CONSTRAINT		pk_cedula_Persona	primary key (cedula),
 );
 
@@ -53,7 +53,7 @@ create table Actividad
 		nombre			varchar(50)					NOT NULL,
 		descripcion		varchar(200)				NOT NULL,
 		fecha			date						NOT NULL,
-		cupo			smallint					NOT NULL,
+		cupo			int					NOT NULL,
 		lugar			varchar(200)				NOT NULL,
 		horaInicio		time						NOT NULL,
 		horaFinal		time						NOT NULL,
@@ -103,7 +103,15 @@ create table Edecan_Actividades
 		CONSTRAINT		fk_cedula_Edecan_Actividades				foreign key (cedula) references persona,
 		CONSTRAINT		fk_idActividad_Edecan_Actividades			foreign key (idActividad) references actividad	
 );
+create table Edecan_Eventos 
+(
+		cedula			varchar(50)		NOT NULL,
+		idEvento		T_Evento		NOT NULL,
 
+		CONSTRAINT		pk_cedula_IdEvento_Edecan_Actividades 	primary key (idEvento,cedula),
+		CONSTRAINT		fk_cedula_Edecan_Eventos				foreign key (cedula) references persona,
+		CONSTRAINT		fk_idEvento_Edecan_Eventos			foreign key (idEvento) references Evento
+);
 create table Matricula 
 (
 		cedula			varchar(50)		NOT NULL,
@@ -127,32 +135,117 @@ create table Eventos_Actividades
 create table regEntrada
 (
 		idActividad		T_Actividad		NOT NULL,
-		cedula			varchar(10)		NOT NULL,
+		cedula			varchar(9)		NOT NULL,
 		fecha			date			default(GETDATE()),
 		hora			datetime		default(SYSDATETIME()),
-		
-		CONSTRAINT		pk_IdActividad_Cedula_regEntrada 	primary key (idActividad,cedula),
-		CONSTRAINT		fk_idActividad_regEntrada			foreign key (idActividad) references actividad	
+		CONSTRAINT              fk_cedula_HoraE_fecha          primary key (cedula,hora,fecha),
+		CONSTRAINT		fk_idActividad_regEntrada foreign key (idActividad) references actividad	
 
 );
 
 create table regSalida
 (
 		idActividad		T_Actividad		NOT NULL,
-		cedula			varchar(10)		NOT NULL,
+		cedula			varchar(9)		NOT NULL,
 		fecha			date			default(GETDATE()),
-		hora			datetime		default(SYSDATETIME())
-		
-		CONSTRAINT		pk_IdActividad_Cedula_regSalida 	primary key (idActividad,cedula),
-		CONSTRAINT		fk_idActividad_regSalida			foreign key (idActividad) references actividad			
+		hora			datetime		default(SYSDATETIME()),
+		CONSTRAINT              fk_cedula_HoraS_fecha          primary key (cedula,hora,fecha),
+		CONSTRAINT		fk_idActividad_regSalida foreign key (idActividad) references actividad			
 );
 
 
 
+///////////////////Funciones
+CREATE PROCEDURE EliminarEventos
+@id_evento T_evento
+AS
+BEGIN
+SET NOCOUNT ON;
+		DELETE from Eventos_Actividades where idEvento=@id_evento;
+		DELETE from Edecan_Eventos where idEvento=@id_evento;
+        DELETE from Evento where idEvento =@id_evento;
+END;
 
-select e.nombre as "Nombre Evento",a.nombre as "Nombre Actividad",a.descripcion,
-a.fecha,a.cupo,a.lugar,a.horaInicio,a.horaFinal,a.duracion
-from Actividad as a inner join Eventos_Actividades as ea on 
-a.idActividad = ea.idActividad inner join Evento as e on e.idEvento = ea.idEvento
-inner join Edecan_Actividades as e_a on e_a.idActividad = a.idActividad inner join 
-Persona as p on e_a.cedula = p.cedula
+
+
+CREATE PROCEDURE EliminarEdecan
+@cedula varchar(50) 
+AS
+BEGIN
+SET NOCOUNT ON;
+		DELETE from Edecan_Actividades where cedula=@cedula;
+		DELETE from Usuarios where cedula=@cedula and tipoCuenta='e';
+		DELETE from Persona where cedula=@cedula;
+END;
+
+
+
+
+CREATE PROCEDURE AddActivitys
+    @nombre AS VARCHAR(50),
+    @descripcion AS VARCHAR(30),
+    @fecha AS VARCHAR(20),
+    @cupo AS INT,
+    @lugar AS VARCHAR(100) ,
+	@horaInicio AS VARCHAR(50),
+	@horaFinal AS VARCHAR(50),
+	@duracion AS VARCHAR(50),
+	@idEvento AS VARCHAR(50)
+AS
+BEGIN
+	
+    Begin Try
+		
+		DECLARE @Random NVARCHAR(10);--To store 4 digit random number
+		DECLARE @Final NVARCHAR(MAX)--Final unique random number
+		DECLARE @Upper INT;
+		DECLARE @Lower INT
+		---- This will create a random number between 1 and 9999
+		DECLARE @temp NVARCHAR(MAX);
+		DECLARE @bandera bit;
+		SET @bandera = 0;
+			WHILE @bandera =0
+			BEGIN
+			   	SET @Lower = 1 ---- The lowest random number
+				SET @Upper = 9999 ---- The highest random number
+				SELECT @Random = ROUND(((@Upper - @Lower -1) * RAND() + @Lower), 0)
+				IF @Random<1000 and @Random>100 
+					SET @Final = 'Act-' +'0'+ @Random;
+				IF @Random<100 and @Random>10
+					SET @Final = 'Act-' +'00'+ @Random;
+				IF @Random<10
+					SET @Final = 'Act-' +'000'+ @Random;
+				IF @Random>=1000
+					SET @Final = 'Act-'+ @Random;
+
+				SELECT @temp=(SELECT idActividad from Actividad where Actividad.idActividad=@Final);
+				IF @temp IS NULL
+					SET @bandera=1;
+				END;
+
+				PRINT @Final;
+				PRINT @bandera;
+			INSERT INTO Actividad (idActividad,nombre,descripcion,fecha,cupo,lugar,horaInicio,horaFinal,duracion) VALUES (@Final,@nombre,@descripcion,@fecha,@cupo,@lugar,@horaInicio,@horaFinal,@duracion)
+
+			INSERT INTO Eventos_Actividades(idEvento,idActividad) VALUES (@idEvento,@Final)
+    End try
+    Begin Catch
+    End Catch
+END
+GO
+
+
+EXEC AddActivitys 'no mames','se genero','2017-12-12','12','ugug','8:8:8','8:8:8','0:0:0','Ev-0002'
+
+
+
+CREATE PROCEDURE EliminarActdevento
+@id_evento T_evento,
+@id_actividad T_Actividad
+AS
+BEGIN
+SET NOCOUNT ON;
+		DELETE from Eventos_Actividades where idEvento=@id_evento and idActividad=@id_actividad;
+        DELETE from Actividad where idActividad =@id_actividad;
+END;
+

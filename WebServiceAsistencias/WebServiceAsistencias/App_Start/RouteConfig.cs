@@ -9,7 +9,7 @@ namespace WebServiceAsistencias
 {
     public class RouteConfig
     {
-        public static string cadenaConexion = @"Data Source=192.168.43.112;Initial Catalog=EvenTEC;User Id=sa;Password=86374844botas";
+        public static string cadenaConexion = @"Data Source=localhost;Initial Catalog=EvenTEC;User Id=sa;Password=86374844botas";
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
@@ -21,10 +21,18 @@ namespace WebServiceAsistencias
                 {
                     controller = "Actividades",
                     action = "Evento",
-                    id = UrlParameter.Optional,
-                    pass = UrlParameter.Optional
+                    id = UrlParameter.Optional
                 }
                 );
+            routes.MapRoute(
+                 "AccesoPersonas",
+                 "Personas",
+                 new
+                 {
+                     controller = "Edecanes",
+                     action = "Edecanes"
+                 }
+                 );
             routes.MapRoute(
                 "AccesoActivity",
                 "Activities",
@@ -32,6 +40,43 @@ namespace WebServiceAsistencias
                 {
                     controller = "Activities",
                     action = "Activity"
+                }
+                );
+            routes.MapRoute(
+                "AccesoActivities",
+                "Activities/Activity/{id}",
+                new
+                {
+                    controller = "Activities",
+                    action = "Activity",
+                    id = UrlParameter.Optional
+                }
+                );
+            routes.MapRoute(
+                 "AccesoActivityAdd",
+                 "ActivitiesAdd",
+                 new
+                 {
+                     controller = "Activities",
+                     action = "ActivityAdd"
+                 }
+                 );
+            routes.MapRoute(
+                 "AccesoActivityUpdate",
+                 "ActivitiesUpdate",
+                 new
+                 {
+                     controller = "Activities",
+                     action = "ActivityUpdate"
+                 }
+                 );
+            routes.MapRoute(
+                "AccesoActivitys",
+                "ActivitiesDelete",
+                new
+                {
+                    controller = "Activities",
+                    action = "ActivityDelete"
                 }
                 );
             routes.MapRoute(
@@ -74,7 +119,34 @@ namespace WebServiceAsistencias
                     pass = UrlParameter.Optional
                 }
                 );
-                    routes.MapRoute(
+            routes.MapRoute(
+                 "AccesoEventosAdministradores",
+                 "Eventos",
+                 new
+                 {
+                     controller = "Eventos",
+                     action = "EventosAdministradores"
+                 }
+                 );
+            routes.MapRoute(
+                  "AccesoEventosAdministradoresUpdate",
+                  "EventosUpdate",
+                  new
+                  {
+                      controller = "Eventos",
+                      action = "EventosUpdate"
+                  }
+                  );
+            routes.MapRoute(
+                   "AccesoEventosAdministradoresAdd",
+                   "EventosAdd",
+                   new
+                   {
+                       controller = "Eventos",
+                       action = "EventosAdd"
+                   }
+                   );
+            routes.MapRoute(
                         "AccesoEdecanes",
                         "Edecanes/Edecan/{id}/{pass}",
                         new

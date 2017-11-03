@@ -12,8 +12,6 @@ angular.module('loginModule',["ngRoute","ngResource"])
          */
          
         $scope.doLogin = function () {
-            user.id=$scope.ida;
-            saveSession(user);
             var ida=Base64.encode($scope.ida);
             var pass=Base64.encode($scope.pass);
             console.log(ida);
@@ -25,7 +23,8 @@ angular.module('loginModule',["ngRoute","ngResource"])
             }).then(function mySucces(response){
                 var estado=response.data;
                 if(estado.success==true){
-                    console.log(response.data);
+                    user.id=$scope.ida;
+                    saveSession(user);
                     window.location.href = ('users/MainView.html');
                 }
                 else{
@@ -39,7 +38,7 @@ angular.module('loginModule',["ngRoute","ngResource"])
          * @param json JSON de origen.
          */
         function saveSession(json) {
-            localStorage.setItem("session.user", json.id);
+            sessionStorage.setItem("session.user",json.id);
             console.log("Sesión guardada.");
         }
     });

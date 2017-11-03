@@ -103,6 +103,15 @@ create table Edecan_Actividades
 		CONSTRAINT		fk_cedula_Edecan_Actividades				foreign key (cedula) references persona,
 		CONSTRAINT		fk_idActividad_Edecan_Actividades			foreign key (idActividad) references actividad	
 );
+create table Persona_Actividades 
+(
+		cedula			varchar(50)		NOT NULL,
+		idActividad		T_Actividad		NOT NULL,
+
+		CONSTRAINT		pk_cedula_IdActividad_Persona_Actividades 	primary key (idActividad,cedula),
+		CONSTRAINT		fk_cedula_Persona_Actividades				foreign key (cedula) references persona,
+		CONSTRAINT		fk_idActividad_Persona_Actividades			foreign key (idActividad) references actividad	
+);
 create table Edecan_Eventos 
 (
 		cedula			varchar(50)		NOT NULL,
@@ -155,7 +164,7 @@ create table regSalida
 
 
 
-///////////////////Funciones
+
 CREATE PROCEDURE EliminarEventos
 @id_evento T_evento
 AS
@@ -177,8 +186,6 @@ SET NOCOUNT ON;
 		DELETE from Usuarios where cedula=@cedula and tipoCuenta='e';
 		DELETE from Persona where cedula=@cedula;
 END;
-
-
 
 
 CREATE PROCEDURE AddActivitys
@@ -251,6 +258,7 @@ END;
 
 
 CREATE PROCEDURE AddEvents
+	@cedula varchar(50), 
     @nombre AS VARCHAR(50),
     @descripcion AS VARCHAR(30),
 	@fechaInicio AS VARCHAR(50),
@@ -289,6 +297,7 @@ BEGIN
 				PRINT @Final;
 				PRINT @bandera;
 			INSERT INTO Evento(idEvento,nombre,descripcion,fechaInicio,fechaFinal) VALUES (@Final,@nombre,@descripcion,@fechaInicio,@fechaFinal)
+			INSERT INTO Administradores_Eventos(cedula,idEvento)VALUES(@cedula,@Final)
     End try
     Begin Catch
     End Catch
@@ -296,6 +305,25 @@ END
 GO
 
 
-EXEC AddEvents 'reunion','eventec','2017-12-12','2017-12-12'
+
+EXEC AddEvents '203210321','reunionleli','eventecnomames','2017-12-12','2017-12-12'
 
 
+CREATE PROCEDURE EliminarPersona
+@id_persona VARCHAR(50),
+@id_actividad T_Actividad
+AS
+BEGIN
+SET NOCOUNT ON;
+		DELETE FROM Persona_Actividades WHERE cedula=@id_persona;
+        DELETE FROM Usuarios WHERE cedula=@id_persona;
+		DELETE FROM Persona WHERE cedula=@id_persona;
+END;
+
+SELECT * FROM Usuarios
+
+
+SELECT * FROM Persona_Actividades
+
+
+EXEC EliminarPersona '000000000',''

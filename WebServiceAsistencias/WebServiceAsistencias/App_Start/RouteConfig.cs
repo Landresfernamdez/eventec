@@ -13,7 +13,7 @@ namespace WebServiceAsistencias
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            
+            //Esta ruta retorna la informacion de una actividad en especifico por id
             routes.MapRoute(
                 "AccesoActividad",
                 "Actividades/Actividad/{ida}",
@@ -24,6 +24,7 @@ namespace WebServiceAsistencias
                     id = UrlParameter.Optional
                 }
                 );
+            //Esta funcion retorna todas las actividades
             routes.MapRoute(
                 "AccesoActivity",
                 "Activities",
@@ -211,16 +212,16 @@ namespace WebServiceAsistencias
                          }
                         );
             routes.MapRoute(
-                         "AccesoEstudiantes",
-                         "Estudiantes",
+                         "AccesoAdministrador",
+                         "Administradores",
                           new
                           {
-                             controller ="Estudiantes",
-                             action ="Estudiantes",
-                             id = UrlParameter.Optional
-                           }
+                              controller = "Administradores",
+                              action = "Administradores",
+                              id = UrlParameter.Optional
+                          }
                          );
-                           
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}/{pass}",

@@ -315,9 +315,7 @@ CREATE PROCEDURE EliminarPersona
 AS
 BEGIN
 SET NOCOUNT ON;
-		DELETE FROM Persona_Actividades WHERE cedula=@id_persona;
-        DELETE FROM Usuarios WHERE cedula=@id_persona;
-		DELETE FROM Persona WHERE cedula=@id_persona;
+		DELETE FROM Persona_Actividades WHERE cedula=@id_persona and idActividad=@id_actividad;
 END;
 
 SELECT * FROM Usuarios
@@ -325,5 +323,14 @@ SELECT * FROM Usuarios
 
 SELECT * FROM Persona_Actividades
 
+INSERT into Persona_Actividades VALUES('000000000','Act-0001')
+EXEC EliminarPersona '000000000','Act-0001'
 
-EXEC EliminarPersona '000000000',''
+CREATE PROCEDURE AddAdmiEvent
+@cedula VARCHAR(50),
+@id_evento T_evento
+AS
+BEGIN
+SET NOCOUNT ON;
+		INSERT INTO Administradores_Eventos(cedula,idEvento)VALUES(@cedula,@id_evento);
+END;

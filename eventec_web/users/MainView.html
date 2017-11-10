@@ -435,19 +435,42 @@
                                         </form>
                                     </div>
                                 </div>
-
+                                <!--Modal para asignar eventos a un administrador-->
                                 <div class="modal fade modal-margin" id="ModalAsignar" tabindex="-1" role="dialog">
                                     <div class="modal-dialog" role="document">
                                         <form class="modal-content"  >
                                             <div class="modal-header bagTecBlue">
-                                                <h4 class=" whiteText" id="ModalAsignarEventos">Asignar Actividades</h4>
+                                                <h4 class=" whiteText" id="ModalAsignarEventos">Asignar administrador a un evento</h4>
                                             </div>
                                             <div class="modal-body" >
-
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="table table-responsive table-advance table-hover">
+                                                                <table id="mytablep" class="table-responsive table-bordred table-striped">
+                                                                    <thead>
+                                                                    <th id="placep">Nombre</th>
+                                                                    <th id="datep">Primer apellido</th>
+                                                                    <th id="cupep">Segundo apellido</th>
+                                                                    <th id="descriptionp">Direccion</th>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <tr ng-repeat="administrador in listaAdministradores">
+                                                                        <td >{{administrador.nombre}}</td>
+                                                                        <td>{{administrador.apellido1}}</td>
+                                                                        <td>{{administrador.apellido2}}</td>
+                                                                        <td>{{administrador.direccion}}</td>
+                                                                        <td><p data-placement="top" data-toggle="tooltip" title="Delete">
+                                                                            <button class="btn btn-info"ng-click="asignarAdministrador(administrador.cedula)" ><span class="glyphicon glyphicon-ok"ng-click="asignarAdministrador(administrador.cedula)"></span></button></p></td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal" ng-click="asigActiv()">Guardar</button>
-                                                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Cancelar</button>
                                             </div>
                                         </form>
                                     </div>
@@ -466,7 +489,7 @@
                                                                 <i class="material-icons">more_vert</i>
                                                             </a>
                                                             <ul class="dropdown-menu pull-right">
-                                                                <li><a data-toggle="modal" data-target="#ModalAsignar">Asignar Actividades</a></li>
+                                                                <li><a data-toggle="modal" data-target="#ModalAsignar" ng-click="actualizarEvento(evento)">Asignar Actividades</a></li>
                                                                 <li><a data-toggle="modal" data-target="#ModalEditar" ng-click="cargarModal(evento)">Editar</a></li>
                                                                 <li><a ng-click="eliminar(evento)">Eliminar</a></li>
                                                             </ul>
@@ -501,9 +524,6 @@
     <script src="../app.js"></script>
     <script src="eventos/eventosServices.js"></script>
     <script src="eventos/eventosController.js"></script>
-
-    <script src="personas/personasServices.js"></script>
-    <script src="personas/personasController.js"></script>
     <!-- Jquery Core Js -->
     <script src="../plugins/jquery/jquery.min.js"></script>
 

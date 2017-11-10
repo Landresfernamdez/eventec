@@ -120,7 +120,7 @@ namespace WebServiceAsistencias.Models
         {
             SqlConnection con = new SqlConnection(cadenaConexion);
             con.Open();
-            string sql = "EXEC EliminarEventos @id";
+            string sql = "EXEC EliminarEvento @id";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.Parameters.Add("@id", System.Data.SqlDbType.NVarChar).Value = evt.idEvento;
             int res = cmd.ExecuteNonQuery();

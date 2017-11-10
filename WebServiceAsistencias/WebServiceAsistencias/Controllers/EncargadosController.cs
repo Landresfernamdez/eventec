@@ -7,20 +7,20 @@ using WebServiceAsistencias.Models;
 
 namespace WebServiceAsistencias.Controllers
 {
-    public class AdministradoresController : Controller
+    public class EncargadosController : Controller
     {
-        private AdmnistradorManager administratorManager;
+        private EncargadoManager EncargManager;
         // GET: Administrador
-        public AdministradoresController()
+        public EncargadosController()
         {
-            administratorManager = new AdmnistradorManager();
+            EncargManager = new EncargadoManager();
         }
-        public JsonResult Administrador(byte[] ida, byte[] pass)
+        public JsonResult Encargado(byte[] ida, byte[] pass)
         {
             switch (Request.HttpMethod)
             {
                 case "GET":
-                    return Json(administratorManager.ObtenerAdmi(ida,pass),
+                    return Json(EncargManager.ObtenerEnc(ida, pass),
                                 JsonRequestBehavior.AllowGet);
             }
 

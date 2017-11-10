@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Text;
 namespace WebServiceAsistencias.Models
 {
-    public class AdministradorManager
+    public class AdmnistradorManager
     {
         public string cadenaConexion = RouteConfig.cadenaConexion;
         

@@ -13,12 +13,12 @@ angular.module('userModule',['ngRoute'])
                         templateUrl:'eventos.html',
                         controller: 'eventosController'
                                              })
-                    .when("/peoples",{
-                        templateUrl:'../personas/personas.html',
-                        controller: 'personasController'
-                    })
                     .when("/main",{
-                    templateUrl:'users/index.html',
+                    templateUrl:'../index.html',
+                    controller: 'eventosController'
+                    })
+                    .when("/login",{
+                    templateUrl:'../index.html',
                     controller: 'eventosController'
                     })
     }

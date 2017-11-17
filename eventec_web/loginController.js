@@ -12,7 +12,6 @@ angular.module('loginModule',["ngRoute","ngResource"])
          */
          
         $scope.doLogin = function () {
-            user.id=$scope.ida;
             var ida=Base64.encode($scope.ida);
             var pass=Base64.encode($scope.pass);
             console.log(ida);
@@ -24,8 +23,8 @@ angular.module('loginModule',["ngRoute","ngResource"])
             }).then(function mySucces(response){
                 var estado=response.data;
                 if(estado.success==true){
+                    user.id=$scope.ida;
                     saveSession(user,'administrador');
-                    console.log(response.data);
                     window.location.href = ('users/index.html');
                 }
                 else{

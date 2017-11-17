@@ -64,7 +64,7 @@ namespace WebServiceAsistencias.Controllers
             }
             return Json(new { Error = true, Message = "Operación HTTP desconocida" });
         }
-        public JsonResult EventosAdd(Event item)
+        public JsonResult EventosAdd(Eventofuser item)
         {
             switch (Request.HttpMethod)
             {

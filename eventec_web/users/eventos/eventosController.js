@@ -11,7 +11,7 @@ angular.module('userModule')
         $scope.act_event={
             idActividad:"",
             idEvento:""
-        }
+        };
         $scope.activity={
             idActividad:"",
             nombre:"",
@@ -35,8 +35,24 @@ angular.module('userModule')
             duracion:"",
             idEvento:""
         };
+        $scope.eventofuser={
+            cedula:"",
+            nombre:"",
+            descripcion:"",
+            fechaInicio:"",
+            fechaFinal:""
+        };
+        $scope.persona={
+            cedula:"",
+            nombre:"",
+            apellido1:"",
+            apellido2:"",
+            estado:"",
+            edad:"",
+            direccion:""
+        };
         //Carga los datos al model editar
-        $scope.cargarModal = function (evento) {
+        $scope.cargarModal = function (evento){
             $scope.event.idEvento = evento.idEvento;
             $scope.event.nombre = evento.nombre;
             $scope.event.descripcion = evento.descripcion;
@@ -53,13 +69,18 @@ angular.module('userModule')
             var fechaF=$scope.event.fechaFinal.getFullYear()+"-"+$scope.event.fechaFinal.getMonth()+"-"+$scope.event.fechaFinal.getDate();
             $scope.event.fechaInicio=fechaI;
             $scope.event.fechaFinal=fechaF;
-            OperationsEventos.insertEvents($scope.event,function(res){
+            $scope.eventofuser.cedula=sessionStorage.getItem("session.user");
+            $scope.eventofuser.nombre=$scope.event.nombre;
+            $scope.eventofuser.descripcion=$scope.event.descripcion;
+            $scope.eventofuser.fechaInicio=$scope.event.fechaInicio;
+            $scope.eventofuser.fechaFinal=$scope.event.fechaFinal;
+            console.log($scope.eventofuser);
+            OperationsEventos.insertEvents($scope.eventofuser,function(res){
                 if(res){
                     OperationsEventos.getEvento(function(res){
                         console.log("res");
                         console.log(res);
                         $scope.listaEventos=res;
-
                     });
                 }
             });
@@ -72,6 +93,9 @@ angular.module('userModule')
                     });
                 }
             });
+        };
+        $scope.actualizarEvento = function(evento){
+            $scope.event=evento;
         };
         $scope.getlistaEventos = OperationsEventos.getEvento(function(res){
             $scope.listaEventos=res;
@@ -126,12 +150,68 @@ angular.module('userModule')
             });
         };
         $scope.actualizarActividad=function actualizarActividad(actividad){
+            console.log("entro a prueba:");
             $scope.activity=actividad;
-
-        }
+            console.log(actividad);
+        };
         $scope.actualizarActividadofEvent=function actualizarActividadofEvent(actividad){
             $scope.act_event.idEvento=JSON.parse(localStorage.getItem("event.id"));
             $scope.act_event.idActividad=actividad.idActividad;
             console.log(actividad);
+        };
+        //Endpoints de la personas
+        console.log("nada:"+$scope.activity.idActividad);
+        $scope.getlistaPersonas = function(){
+            OperationsEventos.getPersona($scope.activity.idActividad,function(res){
+                console.log(res);
+                $scope.listaPersonas=res;
+            });
+        };
+        $scope.actualizarActividadPersonas=function actualizarActividadPersonas(actividad){
+            console.log("entro a prueba:");
+            $scope.activity=actividad;
+            $scope.getlistaPersonas();
+        };
+        $scope.deletePersonas=function deletePersona(){
+            var ActividadPersona={
+                idActividad:$scope.activity.idActividad,
+                cedula:$scope.persona.cedula
+            }
+            OperationsEventos.deletePersonas(ActividadPersona,function(response){
+                if(response){
+                    $scope.listaPersonas=response;
+                    $scope.actualizarPersonas($scope.persona);
+                    $scope.getlistaPersonas();
+                    $location.reload();
+                }
+            });
+        };
+        $scope.actualizarPersonas=function actualizarPersonas(persona){
+            $scope.persona=persona;
+            console.log("actualiza:");
+            console.log(persona);
+        };
+        //Obtener todos los administradores del sistema
+        $scope.getlistaAdministradores = function(){
+            OperationsEventos.getAdministrador(function(res){
+                console.log(res);
+                $scope.listaAdministradores=res;
+            });
+        };
+        //$scope.getlistaAdministradores();
+        $scope.asignarAdministrador=function asignarAdministrador(cedula){
+            console.log("ced:"+cedula+","+"id:"+$scope.event.idEvento);
+            var AdministradorEvento={
+                idEvento:$scope.event.idEvento,
+                cedula:cedula
+            }
+            OperationsEventos.asignarAdministrador(AdministradorEvento,function(response){
+                if(response){
+                    $scope.listaPersonas=response;
+                    $scope.actualizarPersonas($scope.persona);
+                    $scope.getlistaPersonas();
+                    $location.reload();
+                }
+            });
         }
     });

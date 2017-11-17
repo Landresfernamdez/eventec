@@ -57,7 +57,6 @@ angular.module('userModule')
                 method  : 'POST',
                 url     : 'http://localhost/Eventos',
                 data    : evento
-
             })
                 .success(function(data) {
                     if (data.errors) {
@@ -196,9 +195,82 @@ angular.module('userModule')
                     }
                 });
 
-        }
+        },
+        /*Endpoints de personas*/
+        getPersona: function(id,callback){
+            $http.get(
+                "http://localhost/Personas/ActividadesPersona?id="+id
+            ).success(function successCallback(response){
+                // Esta funcion es la que se ejecuta
+                // cuando la peticion es exitosa
+                //response es la variable en la que se devuelven los datos
+                //En este caso particular nuestro response esta estructurado de manera que
+                //los datos que interesan estan en el atributo content
+                //Se devuelve un callback el cual se ejecuta en el controller
+                console.log(response);
+                callback(response);
+            }).error(function errorCallback(response){
+                //En caso de fallo en la peticion entra en esta funcion
+                console.log("fallo", response);
+                callback(response);
+            });
+        },
+        deletePersonas:function(PersonaActividad,callback){
+            $http({
+                method  : 'POST',
+                url     : 'http://localhost/Personas/EliminarActividadesPersona',
+                data    : PersonaActividad
 
+            })
+                .success(function(data){
+                    if (data.errors) {
+                        // Showing errors.
+                        console.log("set message error", data.errors)
+                        alert("Se ha producido un error en la eliminacion");
+                        callback(false);
+                    } else {
+                        alert("La eliminacion fue exitosa");
+                        callback(true);
+                    }
+                });
+        },
+        getAdministrador: function(callback){
+            $http.get(
+                "http://localhost/Administradores"
+            ).success(function successCallback(response){
+                // Esta funcion es la que se ejecuta
+                // cuando la peticion es exitosa
+                //response es la variable en la que se devuelven los datos
+                //En este caso particular nuestro response esta estructurado de manera que
+                //los datos que interesan estan en el atributo content
+                //Se devuelve un callback el cual se ejecuta en el controller
+                console.log(response);
+                callback(response);
+            }).error(function errorCallback(response){
+                //En caso de fallo en la peticion entra en esta funcion
+                console.log("fallo", response);
+                callback(response);
+            });
+        },asignarAdministrador:function(AdministradorEvento,callback){
+            $http({
+                method  : 'POST',
+                url     : 'http://localhost/Administradores',
+                data    : AdministradorEvento
+
+            })
+                .success(function(data){
+                    if (data.errors) {
+                        // Showing errors.
+                        console.log("set message error", data.errors)
+                        alert("Se ha producido un error en la insercion");
+                        callback(false);
+                    } else {
+                        alert("Se le asigno el evento con exito");
+                        callback(true);
+                    }
+                });
+
+        }
     };
     return respuesta;
-
 });

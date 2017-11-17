@@ -9,18 +9,18 @@ namespace WebServiceAsistencias.Controllers
 {
     public class EncargadosController : Controller
     {
-        private EncargadoManager EncargManager;
-        // GET: Administrador
+        private EncargadoManager encManager;
+        // GET: Encargado
         public EncargadosController()
         {
-            EncargManager = new EncargadoManager();
+            encManager = new EncargadoManager();
         }
         public JsonResult Encargado(byte[] ida, byte[] pass)
         {
             switch (Request.HttpMethod)
             {
                 case "GET":
-                    return Json(EncargManager.ObtenerEnc(ida, pass),
+                    return Json(encManager.ObtenerEnc(ida, pass),
                                 JsonRequestBehavior.AllowGet);
             }
 

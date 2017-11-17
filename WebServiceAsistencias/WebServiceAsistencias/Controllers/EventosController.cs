@@ -41,6 +41,19 @@ namespace WebServiceAsistencias.Controllers
             }
             return Json(new { Error = true, Message = "Operación HTTP desconocida" });
         }
+        public JsonResult EventosEncargados(String ida,Event item)
+        {
+            switch (Request.HttpMethod)
+            {
+
+                case "GET":
+                    return Json(eventsManager.ObtenerEventosEncargados(ida), JsonRequestBehavior.AllowGet);
+                case "POST":
+                    return Json(eventsManager.deleteEvento(item));
+
+            }
+            return Json(new { Error = true, Message = "Operación HTTP desconocida" });
+        }
         public JsonResult EventosUpdate(Event item)
         {
             switch (Request.HttpMethod)

@@ -9,20 +9,18 @@ namespace WebServiceAsistencias.Models
     public class EncargadoManager
     {
         public string cadenaConexion = RouteConfig.cadenaConexion;
-
-        public Usuario ObtenerEnc(byte[] idm, byte[] pass)
+        
+        public Usuario ObtenerEnc(byte[] idm,byte[] pass)
         {
             Usuario enc = null;
             SqlConnection con = new SqlConnection(cadenaConexion);
 
             con.Open();
 
-            string sql = "SELECT a.cedula, a.contraseña,a.tipoCuenta from Usuarios as m where m.cedula=@idenc and m.contraseña=@pass";
-
-            String b64 = HttpServerUtility.UrlTokenEncode(idm);
-            String id2 = Encoding.UTF8.GetString(HttpServerUtility.UrlTokenDecode(b64));
-            String b641 = HttpServerUtility.UrlTokenEncode(pass);
-            String pass2 = Encoding.UTF8.GetString(HttpServerUtility.UrlTokenDecode(b641));
+            string sql = "SELECT m.cedula, m.contraseña,m.tipoCuenta from Usuarios as m where m.cedula=@idenc and m.contraseña=@pass";
+            
+            String id2 = Encoding.UTF8.GetString(idm);
+            String pass2 = Encoding.UTF8.GetString(pass);
 
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.Parameters.Add("@idenc", System.Data.SqlDbType.NVarChar).Value = id2;

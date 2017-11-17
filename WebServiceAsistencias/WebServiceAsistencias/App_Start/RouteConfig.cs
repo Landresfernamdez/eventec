@@ -129,6 +129,16 @@ namespace WebServiceAsistencias
                  }
                  );
             routes.MapRoute(
+                 "AccesoEventosEncargados",
+                 "Eventos/Encargado/{ida}",
+                 new
+                 {
+                     controller = "Eventos",
+                     action = "EventosEncargados",
+                     ida = UrlParameter.Optional
+                 }
+                 );
+            routes.MapRoute(
                   "AccesoEventosAdministradoresUpdate",
                   "EventosUpdate",
                   new
@@ -170,6 +180,17 @@ namespace WebServiceAsistencias
                                 }
                                 );
             routes.MapRoute(
+                        "AccesoEncargadoss",
+                        "Encargados/Encargado/{ida}/{pass}",
+                        new
+                        {
+                            controller = "Encargados",
+                            action = "Encargado",
+                            id = UrlParameter.Optional,
+                            pass = UrlParameter.Optional
+                        }
+                        );
+            routes.MapRoute(
                                 "AccesoPersona",
                                 "Personas/Persona/{id}",
                                 new
@@ -188,17 +209,6 @@ namespace WebServiceAsistencias
                                     controller ="Estudiantes",
                                     action ="Estudiantes",
                                     id = UrlParameter.Optional
-                                }
-                                );
-            routes.MapRoute(
-                                "AccesoEncargado",
-                                "Administradores/Encargado/{ida}/{pass}",
-                                new
-                                {
-                                    controller = "Encargados",
-                                    action = "Encargado",
-                                    id = UrlParameter.Optional,
-                                    pass = UrlParameter.Optional
                                 }
                                 );
             routes.MapRoute(

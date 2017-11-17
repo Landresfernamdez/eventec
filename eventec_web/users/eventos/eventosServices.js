@@ -25,13 +25,18 @@ angular.module('userModule')
  objetos json
  */
 
-    .factory('OperationsEventos',function($http){
 
+    .factory('OperationsEventos',function($http){
     var respuesta ={
         getEvento: function(callback){
             var ida=localStorage.getItem("session.user");
+            var getURL;
+            if (localStorage.getItem("session.role")==='administrador')
+                getURL="http://localhost/Eventos"
+            else
+                getURL="http://localhost/Eventos/Encargado?ida="+ida;
             $http.get(
-                "http://localhost/Eventos"
+                getURL
             ).success(function successCallback(response){
                 // Esta funcion es la que se ejecuta
                 // cuando la peticion es exitosa

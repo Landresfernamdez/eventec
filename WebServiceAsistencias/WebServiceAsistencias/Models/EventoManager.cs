@@ -81,6 +81,41 @@ namespace WebServiceAsistencias.Models
             reader.Close();
             return lista;
         }
+        public List<Event> ObtenerEventosEncargados(String ID)
+        {
+            List<Event> lista = new List<Event>();
+
+            SqlConnection con = new SqlConnection(cadenaConexion);
+
+            con.Open();
+
+            string sql = "  select * from Evento where Evento.idEvento=(select idEvento from Administradores_Eventos where Administradores_Eventos.cedula='"+ID+"');";
+
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            SqlDataReader reader =
+                cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+
+            while (reader.Read())
+            {
+                Event evento = new Event();
+                evento.idEvento = reader.GetString(0);
+                evento.nombre = reader.GetString(1);
+                try
+                {
+                    evento.descripcion = reader.GetString(2);
+                }
+                catch (Exception e)
+                {
+                    evento.descripcion = e.Message;
+                }
+                evento.fechaInicio = reader.GetDateTime(3).Date.ToString();
+                evento.fechaFinal = reader.GetDateTime(4).Date.ToString();
+                lista.Add(evento);
+            }
+            reader.Close();
+            return lista;
+        }
         public bool InsertarEvento(Event evt)
         {
             SqlConnection con = new SqlConnection(cadenaConexion);
@@ -119,7 +154,7 @@ namespace WebServiceAsistencias.Models
         {
             SqlConnection con = new SqlConnection(cadenaConexion);
             con.Open();
-            string sql = "EXEC EliminarEventos @id";
+            string sql = "EXEC EliminarEvento @id";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.Parameters.Add("@id", System.Data.SqlDbType.NVarChar).Value = evt.idEvento;
             int res = cmd.ExecuteNonQuery();

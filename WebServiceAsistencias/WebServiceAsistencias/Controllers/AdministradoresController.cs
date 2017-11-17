@@ -9,11 +9,11 @@ namespace WebServiceAsistencias.Controllers
 {
     public class AdministradoresController : Controller
     {
-        private AdmnistradorManager administratorManager;
+        private AdministradorManager administratorManager;
         // GET: Administrador
         public AdministradoresController()
         {
-            administratorManager = new AdmnistradorManager();
+            administratorManager = new AdministradorManager();
         }
         public JsonResult Administrador(byte[] ida, byte[] pass)
         {

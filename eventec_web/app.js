@@ -18,7 +18,7 @@ angular.module('userModule',['ngRoute'])
                         controller: 'personasController'
                     })
                     .when("/main",{
-                    templateUrl:'users/MainView.html',
+                    templateUrl:'users/index.html',
                     controller: 'eventosController'
                     })
     }

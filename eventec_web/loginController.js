@@ -26,7 +26,7 @@ angular.module('loginModule',["ngRoute","ngResource"])
                 if(estado.success==true){
                     saveSession(user,'administrador');
                     console.log(response.data);
-                    window.location.href = ('users/MainView.html');
+                    window.location.href = ('users/index.html');
                 }
                 else{
                     $http({
@@ -37,7 +37,7 @@ angular.module('loginModule',["ngRoute","ngResource"])
                         if(estado.success==true){
                             saveSession(user,'encargado');
                             console.log(response.data);
-                            window.location.href = ('users/MainView.html');
+                            window.location.href = ('users/index.html');
                         }
                         else{
                             alert("Credenciales incorrectas");

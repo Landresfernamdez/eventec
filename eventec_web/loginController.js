@@ -25,7 +25,7 @@ angular.module('loginModule',["ngRoute","ngResource"])
                 if(estado.success==true){
                     user.id=$scope.ida;
                     saveSession(user);
-                    window.location.href = ('users/MainView.html');
+                    window.location.href = ('users/index.html');
                 }
                 else{
                     alert("Credenciales incorrectas");

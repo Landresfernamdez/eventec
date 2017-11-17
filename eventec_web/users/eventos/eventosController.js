@@ -69,11 +69,12 @@ angular.module('userModule')
             var fechaF=$scope.event.fechaFinal.getFullYear()+"-"+$scope.event.fechaFinal.getMonth()+"-"+$scope.event.fechaFinal.getDate();
             $scope.event.fechaInicio=fechaI;
             $scope.event.fechaFinal=fechaF;
-            $scope.eventofuser.cedula=sessionStorage.getItem("user.id");
+            $scope.eventofuser.cedula=sessionStorage.getItem("session.user");
             $scope.eventofuser.nombre=$scope.event.nombre;
             $scope.eventofuser.descripcion=$scope.event.descripcion;
             $scope.eventofuser.fechaInicio=$scope.event.fechaInicio;
             $scope.eventofuser.fechaFinal=$scope.event.fechaFinal;
+            console.log($scope.eventofuser);
             OperationsEventos.insertEvents($scope.eventofuser,function(res){
                 if(res){
                     OperationsEventos.getEvento(function(res){

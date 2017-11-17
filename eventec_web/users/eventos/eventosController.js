@@ -86,10 +86,6 @@ angular.module('userModule')
             });
 
         };
-        $scope.checkRole = function(){
-            if (document.getElementById("dropdownEvent")!==null && localStorage.getItem("session.role")==='encargado')
-                document.getElementById("dropdownEvent").children[2].style.display = "none";
-        };
 
         //Endpoints de la actividades
         $scope.getlistaActivities =OperationsEventos.getActivity(JSON.parse(localStorage.getItem("event.id")),function(res){

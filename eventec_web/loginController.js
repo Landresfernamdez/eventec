@@ -22,7 +22,7 @@ angular.module('loginModule',["ngRoute","ngResource"])
                 url: "http://localhost/Administradores/Administrador?ida="+ida+"&pass="+pass
             }).then(function mySucces(response){
                 var estado=response.data;
-                if(estado.success==true){
+                if(estado.success){
                     user.id=$scope.ida;
                     saveSession(user,'administrador');
                     window.location.href = ('users/index.html');
@@ -33,7 +33,8 @@ angular.module('loginModule',["ngRoute","ngResource"])
                         url: "http://localhost/Encargados/Encargado?ida="+ida+"&pass="+pass
                     }).then(function mySucces(response){
                         var estado=response.data;
-                        if(estado.success==true){
+                        if(estado.success){
+                            user.id=$scope.ida;
                             saveSession(user,'encargado');
                             console.log(response.data);
                             window.location.href = ('users/index.html');
@@ -46,9 +47,11 @@ angular.module('loginModule',["ngRoute","ngResource"])
                 }
             });
         }
+
         /**
          * Guarda la sesión en el almacenamiento local del navegador.
          * @param json JSON de origen.
+         * @param role guarda el rol del usuario
          */
         function saveSession(json, role) {
             localStorage.setItem("session.user", json.id);

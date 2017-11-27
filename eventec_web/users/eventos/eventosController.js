@@ -64,13 +64,22 @@ angular.module('userModule')
             localStorage.setItem("event.id", JSON.stringify(evento.idEvento));
             window.location.href = ('eventos/eventos.html');
         };
+        function getMonthFromString(mon){
+            var d = Date.parse(mon + "1, 2012");
+            if(!isNaN(d)){
+                return new Date(d).getMonth() + 1;
+            }
+            return -1;
+        }
         $scope.crearEvento =function(){
             var monI=parseInt($scope.event.fechaInicio.getMonth());
             var monf=parseInt($scope.event.fechaFinal.getMonth());
             monI=monI+1;
             monf=monf+1;
-            var fechaI=$scope.event.fechaInicio.getFullYear()+"-"+monI+"-"+$scope.event.fechaInicio.getDate();
-            var fechaF=$scope.event.fechaFinal.getFullYear()+"-"+monf+"-"+$scope.event.fechaFinal.getDate();
+            var mI=getMonthFromString(monI.toString());
+            var mF=getMonthFromString(monf.toString());
+            var fechaI=$scope.event.fechaInicio.getFullYear()+"-"+mI+"-"+$scope.event.fechaInicio.getDate();
+            var fechaF=$scope.event.fechaFinal.getFullYear()+"-"+mF+"-"+$scope.event.fechaFinal.getDate();
             if($scope.event.fechaInicio<$scope.event.fechaFinal){
                 $scope.event.fechaInicio=fechaI;
                 $scope.event.fechaFinal=fechaF;
@@ -138,7 +147,7 @@ angular.module('userModule')
                     $route.reload();
                 }
             });
-        }
+        };
         $scope.putActivities=function(activity){
             console.log(activity);
             OperationsEventos.updateActivity($scope.activity,function(res){
@@ -148,7 +157,7 @@ angular.module('userModule')
                     $route.reload();
                 }
             });
-        }
+        };
         $scope.delete=function deleteActivity(actividad){
             OperationsEventos.deleteActivities($scope.act_event,function(response){
                 if(response){
@@ -203,7 +212,6 @@ angular.module('userModule')
         //Obtener todos los administradores del sistema
         $scope.getlistaAdministradores = function(){
             OperationsEventos.getAdministrador(function(res){
-                console.log(res);
                 $scope.listaAdministradores=res;
             });
         };

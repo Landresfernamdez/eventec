@@ -40,10 +40,6 @@ angular.module('userModule')
                 //Se devuelve un callback el cual se ejecuta en el controller
                 console.log(response);
                 callback(response);
-            }).error(function errorCallback(response) {
-                //En caso de fallo en la peticion entra en esta funcion
-                console.log("fallo", response);
-                callback(response);
             });
         },
         deleteEvento:function(evento,callback){
@@ -100,9 +96,7 @@ angular.module('userModule')
                         alert("La update fue exitosa");
                         callback(true);
                     }
-                }).error(function (data) {
-                console.log(data)
-            });
+                });
         /*Endpoints de actividades*/
         },getActivity: function(id,callback){
             $http.get(
@@ -115,10 +109,6 @@ angular.module('userModule')
                 //los datos que interesan estan en el atributo content
                 //Se devuelve un callback el cual se ejecuta en el controller
                 console.log(response);
-                callback(response);
-            }).error(function errorCallback(response) {
-                //En caso de fallo en la peticion entra en esta funcion
-                console.log("fallo", response);
                 callback(response);
             });
         },
@@ -163,11 +153,7 @@ angular.module('userModule')
                         callback(true);
 
                     }
-                }).error(function(data) {
-                //En caso de fallo en la peticion entra en esta funcion
-                alert("Se ha producido un error en la actualizacion"+data);
-                callback({success: false});
-            });
+                });
 
         },
         deleteActivities:function(actividad,callback){
@@ -203,10 +189,6 @@ angular.module('userModule')
                 //Se devuelve un callback el cual se ejecuta en el controller
                 console.log(response);
                 callback(response);
-            }).error(function errorCallback(response){
-                //En caso de fallo en la peticion entra en esta funcion
-                console.log("fallo", response);
-                callback(response);
             });
         },
         deletePersonas:function(PersonaActividad,callback){
@@ -239,10 +221,6 @@ angular.module('userModule')
                 //los datos que interesan estan en el atributo content
                 //Se devuelve un callback el cual se ejecuta en el controller
                 console.log(response);
-                callback(response);
-            }).error(function errorCallback(response){
-                //En caso de fallo en la peticion entra en esta funcion
-                console.log("fallo", response);
                 callback(response);
             });
         },asignarAdministrador:function(AdministradorEvento,callback){

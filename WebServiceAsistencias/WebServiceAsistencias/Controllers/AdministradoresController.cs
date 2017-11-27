@@ -26,18 +26,5 @@ namespace WebServiceAsistencias.Controllers
 
             return Json(new { Error = true, Message = "Operación HTTP desconocida" });
         }
-        public JsonResult Administradores(AdministradorEvento item)
-        {
-            switch (Request.HttpMethod)
-            {
-                case "GET":
-                    return Json(administratorManager.ObtenerAdministradores(),
-                                JsonRequestBehavior.AllowGet);
-                case "POST":
-                    return Json(administratorManager.AsignarEventosAdministrador(item));
-            }
-
-            return Json(new { Error = true, Message = "Operación HTTP desconocida" });
-        }
     }
 }

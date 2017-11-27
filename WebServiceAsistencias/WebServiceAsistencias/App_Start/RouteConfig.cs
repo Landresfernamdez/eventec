@@ -13,7 +13,7 @@ namespace WebServiceAsistencias
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            //Esta ruta retorna la informacion de una actividad en especifico por id
+            
             routes.MapRoute(
                 "AccesoActividad",
                 "Actividades/Actividad/{ida}",
@@ -24,7 +24,15 @@ namespace WebServiceAsistencias
                     id = UrlParameter.Optional
                 }
                 );
-            //Esta funcion retorna todas las actividades
+            routes.MapRoute(
+                 "AccesoPersonas",
+                 "Personas",
+                 new
+                 {
+                     controller = "Edecanes",
+                     action = "Edecanes"
+                 }
+                 );
             routes.MapRoute(
                 "AccesoActivity",
                 "Activities",
@@ -150,78 +158,38 @@ namespace WebServiceAsistencias
 
                         }
                         );
-           routes.MapRoute(
-                       "AccesoAdministradores",
-                       "Administradores/Administrador/{ida}/{pass}",
-                        new
-                        {
-                           controller = "Administradores",
-                           action = "Administrador",
-                           id = UrlParameter.Optional,
-                           pass = UrlParameter.Optional
-                         }
-                          );
+                    routes.MapRoute(
+                                "AccesoAdministradores",
+                                "Administradores/Administrador/{ida}/{pass}",
+                                new
+                                {
+                                    controller = "Administradores",
+                                    action = "Administrador",
+                                    id = UrlParameter.Optional,
+                                    pass = UrlParameter.Optional
+                                }
+                                );
+            routes.MapRoute(
+                                "AccesoPersona",
+                                "Personas/Persona/{id}",
+                                new
+                                {
+                                    controller = "Personas",
+                                    action = "Persona",
+                                    id = UrlParameter.Optional
+                                }
+                                );
 
-          routes.MapRoute(
-                       "AccesoPersonas",
-                        "Personas",
-                         new
-                         {
-                           controller = "Edecanes",
-                           action = "Edecanes"
-                         }
-                          );
-         routes.MapRoute(
-                         "AccesoPersona",
-                         "Personas/Persona/{id}",
-                          new
-                          {
-                            controller = "Personas",
-                            action = "Persona",
-                            id = UrlParameter.Optional
-                            }
-                         );
-            routes.MapRoute(
-                        "AccesoPersonaActividad",
-                        "Personas/ActividadesPersona/{id}",
-                         new
-                         {
-                             controller = "Personas",
-                             action = "ActividadesPersona",
-                             id = UrlParameter.Optional
-                         }
-                        );
-            routes.MapRoute(
-                        "AccesoPersonaActividadmodificar",
-                        "Personas/ActividadesPersona",
-                         new
-                         {
-                             controller = "Personas",
-                             action = "ActividadesPersona",
-                             id = UrlParameter.Optional
-                         }
-                        );
-            routes.MapRoute(
-                        "AccesoPersonaActividadeliminar",
-                        "Personas/EliminarActividadesPersona",
-                         new
-                         {
-                             controller = "Personas",
-                             action = "EliminarActividadesPersona",
-                             id = UrlParameter.Optional
-                         }
-                        );
-            routes.MapRoute(
-                         "AccesoAdministrador",
-                         "Administradores",
-                          new
-                          {
-                              controller = "Administradores",
-                              action = "Administradores",
-                              id = UrlParameter.Optional
-                          }
-                         );
-
+                    routes.MapRoute(
+                                "AccesoEstudiantes",
+                                "Estudiantes",
+                                new
+                                {
+                                    controller ="Estudiantes",
+                                    action ="Estudiantes",
+                                    id = UrlParameter.Optional
+                                }
+                                );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}/{pass}",

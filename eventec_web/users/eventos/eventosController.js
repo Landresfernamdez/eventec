@@ -65,25 +65,35 @@ angular.module('userModule')
             window.location.href = ('eventos/eventos.html');
         };
         $scope.crearEvento =function(){
-            var fechaI=$scope.event.fechaInicio.getFullYear()+"-"+$scope.event.fechaInicio.getMonth()+"-"+$scope.event.fechaInicio.getDate();
-            var fechaF=$scope.event.fechaFinal.getFullYear()+"-"+$scope.event.fechaFinal.getMonth()+"-"+$scope.event.fechaFinal.getDate();
-            $scope.event.fechaInicio=fechaI;
-            $scope.event.fechaFinal=fechaF;
-            $scope.eventofuser.cedula=sessionStorage.getItem("session.user");
-            $scope.eventofuser.nombre=$scope.event.nombre;
-            $scope.eventofuser.descripcion=$scope.event.descripcion;
-            $scope.eventofuser.fechaInicio=$scope.event.fechaInicio;
-            $scope.eventofuser.fechaFinal=$scope.event.fechaFinal;
-            console.log($scope.eventofuser);
-            OperationsEventos.insertEvents($scope.eventofuser,function(res){
-                if(res){
-                    OperationsEventos.getEvento(function(res){
-                        console.log("res");
-                        console.log(res);
-                        $scope.listaEventos=res;
-                    });
-                }
-            });
+            var monI=parseInt($scope.event.fechaInicio.getMonth());
+            var monf=parseInt($scope.event.fechaFinal.getMonth());
+            monI=monI+1;
+            monf=monf+1;
+            var fechaI=$scope.event.fechaInicio.getFullYear()+"-"+monI+"-"+$scope.event.fechaInicio.getDate();
+            var fechaF=$scope.event.fechaFinal.getFullYear()+"-"+monf+"-"+$scope.event.fechaFinal.getDate();
+            if($scope.event.fechaInicio<$scope.event.fechaFinal){
+                $scope.event.fechaInicio=fechaI;
+                $scope.event.fechaFinal=fechaF;
+                $scope.eventofuser.cedula=sessionStorage.getItem("session.user");
+                $scope.eventofuser.nombre=$scope.event.nombre;
+                $scope.eventofuser.descripcion=$scope.event.descripcion;
+                $scope.eventofuser.fechaInicio=$scope.event.fechaInicio;
+                $scope.eventofuser.fechaFinal=$scope.event.fechaFinal;
+                console.log($scope.eventofuser);
+                OperationsEventos.insertEvents($scope.eventofuser,function(res){
+                    if(res){
+                        OperationsEventos.getEvento(function(res){
+                            console.log("res");
+                            console.log(res);
+                            $scope.listaEventos=res;
+                        });
+                    }
+                });
+            }
+            else if($scope.event.fechaInicio>$scope.event.fechaFinal){
+                alert("La fecha de inicio debe ser menor a la fecha final");
+            }
+
         };
         $scope.actualizar = function(){
             OperationsEventos.updateEvents($scope.event,function(res){
@@ -197,7 +207,7 @@ angular.module('userModule')
                 $scope.listaAdministradores=res;
             });
         };
-        //$scope.getlistaAdministradores();
+        $scope.getlistaAdministradores();
         $scope.asignarAdministrador=function asignarAdministrador(cedula){
             console.log("ced:"+cedula+","+"id:"+$scope.event.idEvento);
             var AdministradorEvento={

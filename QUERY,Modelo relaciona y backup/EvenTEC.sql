@@ -103,15 +103,6 @@ create table Edecan_Actividades
 		CONSTRAINT		fk_cedula_Edecan_Actividades				foreign key (cedula) references persona,
 		CONSTRAINT		fk_idActividad_Edecan_Actividades			foreign key (idActividad) references actividad	
 );
-create table Persona_Actividades 
-(
-		cedula			varchar(50)		NOT NULL,
-		idActividad		T_Actividad		NOT NULL,
-
-		CONSTRAINT		pk_cedula_IdActividad_Persona_Actividades 	primary key (idActividad,cedula),
-		CONSTRAINT		fk_cedula_Persona_Actividades				foreign key (cedula) references persona,
-		CONSTRAINT		fk_idActividad_Persona_Actividades			foreign key (idActividad) references actividad	
-);
 create table Edecan_Eventos 
 (
 		cedula			varchar(50)		NOT NULL,
@@ -164,8 +155,8 @@ create table regSalida
 
 
 
-
-CREATE PROCEDURE EliminarEvento
+///////////////////Funciones
+CREATE PROCEDURE EliminarEventos
 @id_evento T_evento
 AS
 BEGIN
@@ -186,6 +177,8 @@ SET NOCOUNT ON;
 		DELETE from Usuarios where cedula=@cedula and tipoCuenta='e';
 		DELETE from Persona where cedula=@cedula;
 END;
+
+
 
 
 CREATE PROCEDURE AddActivitys
@@ -257,71 +250,16 @@ SET NOCOUNT ON;
 END;
 
 
-CREATE PROCEDURE AddEvents
-	@cedula varchar(50), 
-    @nombre AS VARCHAR(50),
-    @descripcion AS VARCHAR(30),
-	@fechaInicio AS VARCHAR(50),
-	@fechaFinal AS VARCHAR(50)
+CREATE PROCEDURE TodosEventos
 AS
 BEGIN
-	
-    Begin Try
-		
-		DECLARE @Random NVARCHAR(10);--To store 4 digit random number
-		DECLARE @Final NVARCHAR(MAX)--Final unique random number
-		DECLARE @Upper INT;
-		DECLARE @Lower INT
-		---- This will create a random number between 1 and 9999
-		DECLARE @temp NVARCHAR(MAX);
-		DECLARE @bandera bit;
-		SET @bandera = 0;
-			WHILE @bandera =0
-			BEGIN
-			   	SET @Lower = 1 ---- The lowest random number
-				SET @Upper = 9999 ---- The highest random number
-				SELECT @Random = ROUND(((@Upper - @Lower -1) * RAND() + @Lower), 0)
-				IF @Random<1000 and @Random>100 
-					SET @Final = 'Ev-' +'0'+ @Random;
-				IF @Random<100 and @Random>10
-					SET @Final = 'Ev-' +'00'+ @Random;
-				IF @Random<10
-					SET @Final = 'Ev-' +'000'+ @Random;
-				IF @Random>=1000
-					SET @Final = 'Ev-'+ @Random;
-
-				SELECT @temp=(SELECT idEvento from Evento where Evento.idEvento=@Final);
-				IF @temp IS NULL
-					SET @bandera=1;
-				END;
-				PRINT @Final;
-				PRINT @bandera;
-			INSERT INTO Evento(idEvento,nombre,descripcion,fechaInicio,fechaFinal) VALUES (@Final,@nombre,@descripcion,@fechaInicio,@fechaFinal)
-			INSERT INTO Administradores_Eventos(cedula,idEvento)VALUES(@cedula,@Final)
-    End try
-    Begin Catch
-    End Catch
-END
-GO
-
-
-
-EXEC AddEvents '203210321','reunionleli','eventecnomames','2017-12-12','2017-12-12'
-
-
-CREATE PROCEDURE EliminarPersona
-@id_persona VARCHAR(50),
-@id_actividad T_Actividad
-AS
-BEGIN
-SET NOCOUNT ON;
-		DELETE FROM Persona_Actividades WHERE cedula=@id_persona and idActividad=@id_actividad;
+	DECLARE @fecha DATE=(SELECT SYSDATETIME());
+	---SELECT @fecha
+	SELECT * FROM Evento
+	WHERE CAST(Evento.fechaInicio AS DATETIME) BETWEEN @fecha AND CAST(Evento.fechaFinal AS DATETIME)
 END;
 
-SELECT * FROM Usuarios
+
+EXEC TodosEventos
 
 
-SELECT * FROM Persona_Actividades
-
-INSERT into Persona_Actividades VALUES('000000000','Act-0001')
-EXEC EliminarPersona '000000000','Act-0001'

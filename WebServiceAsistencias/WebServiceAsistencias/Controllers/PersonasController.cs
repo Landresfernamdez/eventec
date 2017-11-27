@@ -15,6 +15,14 @@ namespace WebServiceAsistencias.Controllers
         {
             personasManager = new PersonaManager();
         }
+
+        // GET /Api/Clientes
+        
+
+        // POST    Clientes/Lugar    { Nombre:"nombre", Telefono:123456789 }
+        // PUT     Clientes/Lugar/3  { Id:3, Nombre:"nombre", Telefono:123456789 }
+        // GET     Clientes/Lugar/3
+        // DELETE  Clientes/Lugar/3
         public JsonResult Persona(string id, Persona item)
         {
             switch (Request.HttpMethod)
@@ -29,27 +37,7 @@ namespace WebServiceAsistencias.Controllers
                // case "DELETE":
                 //    return Json(anfitrionesManager.EliminarCliente(id.GetValueOrDefault()));
             }
-            return Json(new { Error = true, Message = "Operación HTTP desconocida" });
-        }
-        public JsonResult ActividadesPersona(string id,Persona item)
-        {
-            switch (Request.HttpMethod)
-            {
-                case "GET":
-                    return Json(personasManager.ObtenerPersonadeActividades(id),
-                                JsonRequestBehavior.AllowGet);
-                case "POST":
-                    return Json(personasManager.ActualizarPersona(item));
-            }
-            return Json(new { Error = true, Message = "Operación HTTP desconocida" });
-        }
-        public JsonResult EliminarActividadesPersona(string id, PersonaActividad item)
-        {
-            switch (Request.HttpMethod)
-            {
-                case "POST":
-                    return Json(personasManager.EliminarPersona(item));
-            }
+
             return Json(new { Error = true, Message = "Operación HTTP desconocida" });
         }
     }

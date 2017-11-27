@@ -93,11 +93,8 @@
     <Compile Include="Models\ActivitiesManager.cs" />
     <Compile Include="Models\Activityofevent.cs" />
     <Compile Include="Models\Act_event.cs" />
-    <Compile Include="Models\AdministradorEvento.cs" />
     <Compile Include="Models\AdministradorManager.cs" />
     <Compile Include="Models\Event.cs" />
-    <Compile Include="Models\Eventofuser.cs" />
-    <Compile Include="Models\PersonaActividad.cs" />
     <Compile Include="Models\PersonaManager.cs" />
     <Compile Include="Models\EventoManager.cs" />
     <Compile Include="Controllers\EventosController.cs" />

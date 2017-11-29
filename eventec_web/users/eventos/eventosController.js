@@ -148,7 +148,7 @@ angular.module('userModule')
         };
         $scope.putActivities=function(activity){
             console.log(activity);
-            OperationsEventos.updateActivity($scope.activity,function(res){
+            OperationsEventos.updateActivity(activity,function(res){
                 if(res){
                     $scope.listaActivities=res;
                     $location.path('activities');

@@ -156,7 +156,8 @@ create table regSalida
 
 
 ///////////////////Funciones
-CREATE PROCEDURE EliminarEventos
+
+CREATE PROCEDURE EliminarEvento
 @id_evento T_evento
 AS
 BEGIN
@@ -178,6 +179,28 @@ SET NOCOUNT ON;
 		DELETE from Persona where cedula=@cedula;
 END;
 
+
+
+
+CREATE PROCEDURE EliminarActdevento
+@id_evento T_evento,
+@id_actividad T_Actividad
+AS
+BEGIN
+SET NOCOUNT ON;
+		DELETE from Eventos_Actividades where idEvento=@id_evento and idActividad=@id_actividad;
+        DELETE from Actividad where idActividad =@id_actividad;
+END;
+
+
+CREATE PROCEDURE EliminarPersona
+@id_persona VARCHAR(50),
+@id_actividad T_Actividad
+AS
+BEGIN
+SET NOCOUNT ON;
+		DELETE FROM Persona_Actividades WHERE cedula=@id_persona and idActividad=@id_actividad;
+END;
 
 
 
@@ -239,14 +262,66 @@ EXEC AddActivitys 'no mames','se genero','2017-12-12','12','ugug','8:8:8','8:8:8
 
 
 
-CREATE PROCEDURE EliminarActdevento
-@id_evento T_evento,
-@id_actividad T_Actividad
+
+CREATE PROCEDURE AddEvents
+	@cedula varchar(50), 
+    @nombre AS VARCHAR(50),
+    @descripcion AS VARCHAR(30),
+	@fechaInicio AS VARCHAR(50),
+	@fechaFinal AS VARCHAR(50)
+AS
+BEGIN
+	
+    Begin Try
+		
+		DECLARE @Random NVARCHAR(10);--To store 4 digit random number
+		DECLARE @Final NVARCHAR(MAX)--Final unique random number
+		DECLARE @Upper INT;
+		DECLARE @Lower INT
+		---- This will create a random number between 1 and 9999
+		DECLARE @temp NVARCHAR(MAX);
+		DECLARE @bandera bit;
+		SET @bandera = 0;
+			WHILE @bandera =0
+			BEGIN
+			   	SET @Lower = 1 ---- The lowest random number
+				SET @Upper = 9999 ---- The highest random number
+				SELECT @Random = ROUND(((@Upper - @Lower -1) * RAND() + @Lower), 0)
+				IF @Random<1000 and @Random>100 
+					SET @Final = 'Ev-' +'0'+ @Random;
+				IF @Random<100 and @Random>10
+					SET @Final = 'Ev-' +'00'+ @Random;
+				IF @Random<10
+					SET @Final = 'Ev-' +'000'+ @Random;
+				IF @Random>=1000
+					SET @Final = 'Ev-'+ @Random;
+
+				SELECT @temp=(SELECT idEvento from Evento where Evento.idEvento=@Final);
+				IF @temp IS NULL
+					SET @bandera=1;
+				END;
+				PRINT @Final;
+				PRINT @bandera;
+			INSERT INTO Evento(idEvento,nombre,descripcion,fechaInicio,fechaFinal) VALUES (@Final,@nombre,@descripcion,@fechaInicio,@fechaFinal)
+			INSERT INTO Administradores_Eventos(cedula,idEvento)VALUES(@cedula,@Final)
+    End try
+    Begin Catch
+    End Catch
+END
+GO
+
+
+
+EXEC AddEvents '203210321','reunionleli','eventecnomames','2017-12-12','2017-12-12'
+
+
+CREATE PROCEDURE [dbo].[AddAdmiEvent]
+@cedula VARCHAR(50),
+@id_evento T_evento
 AS
 BEGIN
 SET NOCOUNT ON;
-		DELETE from Eventos_Actividades where idEvento=@id_evento and idActividad=@id_actividad;
-        DELETE from Actividad where idActividad =@id_actividad;
+		INSERT INTO Administradores_Eventos(cedula,idEvento)VALUES(@cedula,@id_evento);
 END;
 
 
@@ -263,3 +338,8 @@ END;
 EXEC TodosEventos
 
 
+SELECT * FROM Evento
+
+
+
+SELECT * FROM Usuarios

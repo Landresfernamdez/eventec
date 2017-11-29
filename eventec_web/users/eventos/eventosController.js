@@ -76,10 +76,8 @@ angular.module('userModule')
             var monf=parseInt($scope.event.fechaFinal.getMonth());
             monI=monI+1;
             monf=monf+1;
-            var mI=getMonthFromString(monI.toString());
-            var mF=getMonthFromString(monf.toString());
-            var fechaI=$scope.event.fechaInicio.getFullYear()+"-"+mI+"-"+$scope.event.fechaInicio.getDate();
-            var fechaF=$scope.event.fechaFinal.getFullYear()+"-"+mF+"-"+$scope.event.fechaFinal.getDate();
+            var fechaI=$scope.event.fechaInicio.getFullYear()+"-"+ monI+"-"+$scope.event.fechaInicio.getDate();
+            var fechaF=$scope.event.fechaFinal.getFullYear()+"-"+monf+"-"+$scope.event.fechaFinal.getDate();
             if($scope.event.fechaInicio<$scope.event.fechaFinal){
                 $scope.event.fechaInicio=fechaI;
                 $scope.event.fechaFinal=fechaF;

@@ -133,18 +133,35 @@ angular.module('userModule')
         });
         $scope.postActivities=function(activity){
             $scope.activityofevent.idEvento=JSON.parse(localStorage.getItem("event.id"));
-            var fecha=$scope.activityofevent.fecha.getFullYear()+"-"+$scope.activityofevent.fecha.getMonth()+"-"+$scope.activityofevent.fecha.getDate();
-            console.log("fecha:"+fecha);
-            $scope.activityofevent.fecha=fecha;
-            OperationsEventos.insertActivity($scope.activityofevent,function(res){
-                if(res){
-                    console.log("res")
-                    console.log(res);
-                    $scope.listaActivities=res;
-                    $location.path('activities');
-                    $route.reload();
-                }
-            });
+            var month=parseInt($scope.activityofevent.fecha.getMonth())+1;
+            var fecha=$scope.activityofevent.fecha.getFullYear()+"-"+month+"-"+$scope.activityofevent.fecha.getDate();
+            var duracion=$scope.activityofevent.horaFinal-$scope.activityofevent.horaInicio;
+            var temporal={
+                nombre:$scope.activityofevent.nombre,
+                descripcion:$scope.activityofevent.descripcion,
+                fecha:fecha,
+                cupo:$scope.activityofevent.cupo,
+                lugar:$scope.activityofevent.lugar,
+                horaInicio:$scope.activityofevent.horaInicio,
+                horaFinal:$scope.activityofevent.horaFinal,
+                duracion:new Date(duracion),
+                idEvento:$scope.activityofevent.idEvento
+            }
+            if($scope.activityofevent.horaFinal>$scope.activityofevent.horaInicio){
+                console.log(temporal);
+                OperationsEventos.insertActivity(temporal,function(res){
+                    if(res){
+                        console.log("res")
+                        console.log(res);
+                        $scope.listaActivities=res;
+                        $location.path('activities');
+                        $route.reload();
+                    }
+                });
+            }
+            else{
+                alert("La hora final debe ser mayor a la hora inicial");
+            }
         };
         $scope.putActivities=function(activity){
             console.log(activity);

@@ -248,9 +248,15 @@ BEGIN
 
 				PRINT @Final;
 				PRINT @bandera;
-			INSERT INTO Actividad (idActividad,nombre,descripcion,fecha,cupo,lugar,horaInicio,horaFinal,duracion) VALUES (@Final,@nombre,@descripcion,@fecha,@cupo,@lugar,@horaInicio,@horaFinal,@duracion)
-
-			INSERT INTO Eventos_Actividades(idEvento,idActividad) VALUES (@idEvento,@Final)
+			
+			DECLARE @fechat DATE;
+			SET @fechat=@fecha;
+			DECLARE @temp1 VARCHAR(50);
+			SET @temp1=(SELECT idEvento FROM  Evento WHERE  fechaInicio<@fecha AND fechaFinal>@fecha AND idEvento=@idEvento); 
+			PRINT @temp1;
+			IF @temp1=@idEvento
+				INSERT INTO Actividad (idActividad,nombre,descripcion,fecha,cupo,lugar,horaInicio,horaFinal,duracion) VALUES (@Final,@nombre,@descripcion,@fecha,@cupo,@lugar,@horaInicio,@horaFinal,@duracion);
+				INSERT INTO Eventos_Actividades(idEvento,idActividad) VALUES (@idEvento,@Final); 
     End try
     Begin Catch
     End Catch
@@ -258,8 +264,9 @@ END
 GO
 
 
-EXEC AddActivitys 'no mames','se genero','2017-12-12','12','ugug','8:8:8','8:8:8','0:0:0','Ev-0002'
-
+SELECT * FROM Evento
+EXEC AddActivitys 'no mames','se genero','2017-12-6','12','ugug','8:8:8','8:8:8','0:0:0','Ev-1675'
+SELECT * FROM Actividad
 
 
 
@@ -341,5 +348,5 @@ EXEC TodosEventos
 SELECT * FROM Evento
 
 
-
+SELECT * FROM Actividad
 SELECT * FROM Usuarios

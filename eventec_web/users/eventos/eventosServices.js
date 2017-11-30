@@ -128,7 +128,7 @@ angular.module('userModule')
                     } else {
                         alert("La insercion fue exitosa");
                         console.log("data");
-                        console.log(data);
+                        console.log(data.data);
                         callback(true);
 
                     }

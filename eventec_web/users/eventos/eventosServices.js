@@ -150,6 +150,7 @@ angular.module('userModule')
                         callback(false);
                     } else {
                         alert("La actualizacion fue exitosa");
+                        console.log(data);
                         callback(true);
 
                     }

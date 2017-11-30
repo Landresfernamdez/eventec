@@ -268,7 +268,38 @@ SELECT * FROM Evento
 EXEC AddActivitys 'no mames','se genero','2017-12-6','12','ugug','8:8:8','8:8:8','0:0:0','Ev-1675'
 SELECT * FROM Actividad
 
+CREATE PROCEDURE modificarActivitys
+    @nombre AS VARCHAR(50),
+    @descripcion AS VARCHAR(30),
+    @fecha AS VARCHAR(20),
+    @cupo AS INT,
+    @lugar AS VARCHAR(100) ,
+	@horaInicio AS VARCHAR(50),
+	@horaFinal AS VARCHAR(50),
+	@duracion AS VARCHAR(50),
+	@idActividad AS VARCHAR(50)
+AS
+BEGIN
+	
+    Begin Try
+			DECLARE @fechat DATE;
+			SET @fechat=@fecha;
+			DECLARE @idEvento VARCHAR(50);
+			SET @idEvento=(SELECT idEvento from Eventos_Actividades where idActividad=@idActividad);
+			DECLARE @temp1 VARCHAR(50);
+			SET @temp1=(SELECT idEvento FROM  Evento WHERE  fechaInicio<@fecha AND fechaFinal>@fecha AND idEvento=@idEvento); 
+			PRINT @temp1;
+			IF @temp1=@idEvento
+				Update Actividad set nombre=@nombre,descripcion = @descripcion,fecha = @fecha,cupo = @cupo,lugar=@lugar,horaInicio=@horaInicio,horaFinal=@horaFinal,duracion=@duracion where idActividad = @idActividad
+    End try
+    Begin Catch
+    End Catch
+END
+GO
 
+EXEC modificarActivitys 'no mames','se genero','2017-12-7','12','ugug','8:8:8','8:8:8','0:0:0','Act-2431'
+
+SELECT * FROM Actividad
 
 CREATE PROCEDURE AddEvents
 	@cedula varchar(50), 
@@ -317,9 +348,12 @@ BEGIN
 END
 GO
 
-
-
 EXEC AddEvents '203210321','reunionleli','eventecnomames','2017-12-12','2017-12-12'
+
+
+
+
+
 
 
 CREATE PROCEDURE [dbo].[AddAdmiEvent]

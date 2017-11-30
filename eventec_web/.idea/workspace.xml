@@ -12,11 +12,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="eventosController.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="eventosController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/users/eventos/eventosController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="153" column="42" lean-forward="true" selection-start-line="153" selection-start-column="42" selection-end-line="153" selection-end-column="42" />
+            <state relative-caret-position="334">
+              <caret line="173" column="55" lean-forward="true" selection-start-line="173" selection-start-column="55" selection-end-line="173" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -52,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activities.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="activities.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/users/eventos/activities.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="94" column="71" lean-forward="false" selection-start-line="94" selection-start-column="71" selection-end-line="94" selection-end-column="71" />
+            <state relative-caret-position="170">
+              <caret line="89" column="132" lean-forward="true" selection-start-line="89" selection-start-column="132" selection-end-line="89" selection-end-column="132" />
               <folding>
                 <element signature="n#style#0;n#i#0;n#a#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
@@ -88,8 +88,8 @@
       <file leaf-file-name="eventosServices.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/users/eventos/eventosServices.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="130" column="47" lean-forward="true" selection-start-line="130" selection-start-column="47" selection-end-line="130" selection-end-column="47" />
+            <state relative-caret-position="510">
+              <caret line="152" column="42" lean-forward="false" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -154,8 +154,8 @@
         <option value="$PROJECT_DIR$/users/index.html" />
         <option value="$PROJECT_DIR$/users/eventos/eventos.html" />
         <option value="$PROJECT_DIR$/users/eventos/eventosServices.js" />
-        <option value="$PROJECT_DIR$/users/eventos/eventosController.js" />
         <option value="$PROJECT_DIR$/users/eventos/activities.html" />
+        <option value="$PROJECT_DIR$/users/eventos/eventosController.js" />
       </list>
     </option>
   </component>
@@ -453,12 +453,12 @@
       <workItem from="1511801455892" duration="4365000" />
       <workItem from="1511816509472" duration="3478000" />
       <workItem from="1511938961671" duration="3715000" />
-      <workItem from="1511990171251" duration="8061000" />
+      <workItem from="1511990171251" duration="10772000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="237662000" />
+    <option name="totallyTimeSpent" value="240373000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -688,28 +688,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/users/eventos/eventosServices.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="130" column="47" lean-forward="true" selection-start-line="130" selection-start-column="47" selection-end-line="130" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users/eventos/eventosController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="153" column="42" lean-forward="true" selection-start-line="153" selection-start-column="42" selection-end-line="153" selection-end-column="42" />
+        <state relative-caret-position="510">
+          <caret line="152" column="42" lean-forward="false" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/users/eventos/activities.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="94" column="71" lean-forward="false" selection-start-line="94" selection-start-column="71" selection-end-line="94" selection-end-column="71" />
+        <state relative-caret-position="170">
+          <caret line="89" column="132" lean-forward="true" selection-start-line="89" selection-start-column="132" selection-end-line="89" selection-end-column="132" />
           <folding>
             <element signature="n#style#0;n#i#0;n#a#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/eventos/eventosController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="173" column="55" lean-forward="true" selection-start-line="173" selection-start-column="55" selection-end-line="173" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>

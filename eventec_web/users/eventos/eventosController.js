@@ -164,19 +164,28 @@ angular.module('userModule')
             }
         };
         $scope.putActivities=function(activity){
+            activity.fecha=new Date(activity.fecha);
+            var month=parseInt(activity.fecha.getMonth())+1;
+            activity.fecha= activity.fecha.getFullYear()+"-"+month+"-"+activity.fecha.getDate()
+            console.log(activity.fecha);
+            var duracion1=activity.horaFinal-activity.horaInicio;
+            activity.duracion=new Date(duracion1);
             console.log(activity);
-            OperationsEventos.updateActivity(activity,function(res){
-                if(res){
-                    $scope.listaActivities=res;
-                    $location.path('activities');
-                    $route.reload();
-                }
-            });
+            if(activity.horaFinal>activity.horaInicio){
+                OperationsEventos.updateActivity(activity,function(res){
+                    if(res){
+                        $location.path('activities');
+                        $route.reload();
+                    }
+                });
+            }
+            else{
+                alert("La hora final tiene que ser mayor a la hora de inicio");
+            }
         };
         $scope.delete=function deleteActivity(actividad){
             OperationsEventos.deleteActivities($scope.act_event,function(response){
                 if(response){
-                    $scope.listaActivities=response;
                     $location.path('activities');
                     $route.reload();
                 }

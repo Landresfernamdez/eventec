@@ -63,7 +63,8 @@ namespace WebServiceAsistencias.Models
         {
             SqlConnection con = new SqlConnection(cadenaConexion);
             con.Open();
-            string sql = "Update Actividad set nombre=@name,descripcion = @desc,fecha = @date,cupo = @cup,lugar=@place,horaInicio=@horI,horaFinal=@horF,duracion=@dur where idActividad = @id;";
+            
+            string sql = "EXEC modificarActivitys @name,@desc,@date,@cup,@place,@horI,@horF,@dur,@id;";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.Parameters.Add("@id", System.Data.SqlDbType.NVarChar).Value = act.idActividad;
             cmd.Parameters.Add("@name", System.Data.SqlDbType.NVarChar).Value = act.nombre;

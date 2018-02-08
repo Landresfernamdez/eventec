@@ -54,7 +54,7 @@ namespace WebServiceAsistencias.Models
 
             con.Open();
 
-            string sql = "select * from Evento";
+            string sql = "EXEC TodosEventos";
 
             SqlCommand cmd = new SqlCommand(sql, con);
 

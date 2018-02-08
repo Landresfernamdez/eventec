@@ -64,26 +64,43 @@ angular.module('userModule')
             localStorage.setItem("event.id", JSON.stringify(evento.idEvento));
             window.location.href = ('eventos/eventos.html');
         };
+        function getMonthFromString(mon){
+            var d = Date.parse(mon + "1, 2012");
+            if(!isNaN(d)){
+                return new Date(d).getMonth() + 1;
+            }
+            return -1;
+        }
         $scope.crearEvento =function(){
-            var fechaI=$scope.event.fechaInicio.getFullYear()+"-"+$scope.event.fechaInicio.getMonth()+"-"+$scope.event.fechaInicio.getDate();
-            var fechaF=$scope.event.fechaFinal.getFullYear()+"-"+$scope.event.fechaFinal.getMonth()+"-"+$scope.event.fechaFinal.getDate();
-            $scope.event.fechaInicio=fechaI;
-            $scope.event.fechaFinal=fechaF;
-            $scope.eventofuser.cedula=sessionStorage.getItem("session.user");
-            $scope.eventofuser.nombre=$scope.event.nombre;
-            $scope.eventofuser.descripcion=$scope.event.descripcion;
-            $scope.eventofuser.fechaInicio=$scope.event.fechaInicio;
-            $scope.eventofuser.fechaFinal=$scope.event.fechaFinal;
-            console.log($scope.eventofuser);
-            OperationsEventos.insertEvents($scope.eventofuser,function(res){
-                if(res){
-                    OperationsEventos.getEvento(function(res){
-                        console.log("res");
-                        console.log(res);
-                        $scope.listaEventos=res;
-                    });
-                }
-            });
+            var monI=parseInt($scope.event.fechaInicio.getMonth());
+            var monf=parseInt($scope.event.fechaFinal.getMonth());
+            monI=monI+1;
+            monf=monf+1;
+            var fechaI=$scope.event.fechaInicio.getFullYear()+"-"+ monI+"-"+$scope.event.fechaInicio.getDate();
+            var fechaF=$scope.event.fechaFinal.getFullYear()+"-"+monf+"-"+$scope.event.fechaFinal.getDate();
+            if($scope.event.fechaInicio<$scope.event.fechaFinal){
+                $scope.event.fechaInicio=fechaI;
+                $scope.event.fechaFinal=fechaF;
+                $scope.eventofuser.cedula=sessionStorage.getItem("session.user");
+                $scope.eventofuser.nombre=$scope.event.nombre;
+                $scope.eventofuser.descripcion=$scope.event.descripcion;
+                $scope.eventofuser.fechaInicio=$scope.event.fechaInicio;
+                $scope.eventofuser.fechaFinal=$scope.event.fechaFinal;
+                console.log($scope.eventofuser);
+                OperationsEventos.insertEvents($scope.eventofuser,function(res){
+                    if(res){
+                        OperationsEventos.getEvento(function(res){
+                            console.log("res");
+                            console.log(res);
+                            $scope.listaEventos=res;
+                        });
+                    }
+                });
+            }
+            else if($scope.event.fechaInicio>$scope.event.fechaFinal){
+                alert("La fecha de inicio debe ser menor a la fecha final");
+            }
+
         };
         $scope.actualizar = function(){
             OperationsEventos.updateEvents($scope.event,function(res){
@@ -117,33 +134,59 @@ angular.module('userModule')
         });
         $scope.postActivities=function(activity){
             $scope.activityofevent.idEvento=JSON.parse(localStorage.getItem("event.id"));
-            var fecha=$scope.activityofevent.fecha.getFullYear()+"-"+$scope.activityofevent.fecha.getMonth()+"-"+$scope.activityofevent.fecha.getDate();
-            console.log("fecha:"+fecha);
-            $scope.activityofevent.fecha=fecha;
-            OperationsEventos.insertActivity($scope.activityofevent,function(res){
-                if(res){
-                    console.log("res")
-                    console.log(res);
-                    $scope.listaActivities=res;
-                    $location.path('activities');
-                    $route.reload();
-                }
-            });
-        }
+            var month=parseInt($scope.activityofevent.fecha.getMonth())+1;
+            var fecha=$scope.activityofevent.fecha.getFullYear()+"-"+month+"-"+$scope.activityofevent.fecha.getDate();
+            var duracion=$scope.activityofevent.horaFinal-$scope.activityofevent.horaInicio;
+            var temporal={
+                nombre:$scope.activityofevent.nombre,
+                descripcion:$scope.activityofevent.descripcion,
+                fecha:fecha,
+                cupo:$scope.activityofevent.cupo,
+                lugar:$scope.activityofevent.lugar,
+                horaInicio:$scope.activityofevent.horaInicio,
+                horaFinal:$scope.activityofevent.horaFinal,
+                duracion:new Date(duracion),
+                idEvento:$scope.activityofevent.idEvento
+            }
+            if($scope.activityofevent.horaFinal>$scope.activityofevent.horaInicio){
+                console.log(temporal);
+                OperationsEventos.insertActivity(temporal,function(res){
+                    if(res){
+                        console.log("res")
+                        console.log(res);
+                        $scope.listaActivities=res;
+                        $location.path('activities');
+                        $route.reload();
+                    }
+                });
+            }
+            else{
+                alert("La hora final debe ser mayor a la hora inicial");
+            }
+        };
         $scope.putActivities=function(activity){
+            activity.fecha=new Date(activity.fecha);
+            var month=parseInt(activity.fecha.getMonth())+1;
+            activity.fecha= activity.fecha.getFullYear()+"-"+month+"-"+activity.fecha.getDate()
+            console.log(activity.fecha);
+            var duracion1=activity.horaFinal-activity.horaInicio;
+            activity.duracion=new Date(duracion1);
             console.log(activity);
-            OperationsEventos.updateActivity($scope.activity,function(res){
-                if(res){
-                    $scope.listaActivities=res;
-                    $location.path('activities');
-                    $route.reload();
-                }
-            });
-        }
+            if(activity.horaFinal>activity.horaInicio){
+                OperationsEventos.updateActivity(activity,function(res){
+                    if(res){
+                        $location.path('activities');
+                        $route.reload();
+                    }
+                });
+            }
+            else{
+                alert("La hora final tiene que ser mayor a la hora de inicio");
+            }
+        };
         $scope.delete=function deleteActivity(actividad){
             OperationsEventos.deleteActivities($scope.act_event,function(response){
                 if(response){
-                    $scope.listaActivities=response;
                     $location.path('activities');
                     $route.reload();
                 }
@@ -194,11 +237,10 @@ angular.module('userModule')
         //Obtener todos los administradores del sistema
         $scope.getlistaAdministradores = function(){
             OperationsEventos.getAdministrador(function(res){
-                console.log(res);
                 $scope.listaAdministradores=res;
             });
         };
-        //$scope.getlistaAdministradores();
+        $scope.getlistaAdministradores();
         $scope.asignarAdministrador=function asignarAdministrador(cedula){
             console.log("ced:"+cedula+","+"id:"+$scope.event.idEvento);
             var AdministradorEvento={

@@ -1,6 +1,6 @@
 <div class="card" >
     <div class="header">
-        <h2 >Actividades</h2>
+        <h2 >Actividades del evento</h2>
         <div class="header-dropdown m-r--5 ">
             <a class="btn-floating btn-sm " data-toggle="modal" data-target="#add"><i class="material-icons" style="cursor:pointer">add</i></a>
         </div>
@@ -21,7 +21,6 @@
                                                <th id="description">Descripcion</th>
                                                </thead>
                                                     <tbody>
-
                                                             <tr ng-repeat="activity in listaActivities">
                                                               <td >{{activity.nombre}}</td>
                                                               <td>{{activity.lugar}}</td>
@@ -88,12 +87,12 @@
                         </td>
                         <td>
                             <div class="form-group">
-                                <input class="form-control " type="text" placeholder="activity.horaInicio"ng-model="activity.horaInicio">
+                                <input class="form-control " type="time" placeholder="activity.horaInicio"ng-model="activity.horaInicio">
                             </div>
                         </td>
                         <td>
                             <div class="form-group">
-                                <input class="form-control " type="text" placeholder="activity.horaFinal"ng-model="activity.horaFinal">
+                                <input class="form-control " type="time" placeholder="activity.horaFinal"ng-model="activity.horaFinal">
                             </div>
                         </td>
 
@@ -161,28 +160,25 @@
                                            <input class="form-control " type="text" placeholder="lugar"ng-model="activityofevent.lugar">
                                        </div>
                                    </td>
-
-
-
                                </tr>
                                <tr>
                                    <td>
                                        <div class="form-group">
-                                           <input class="form-control " type="datetime" placeholder="Hora de inicio"ng-model="activityofevent.horaInicio">
+                                           <input class="form-control " type="time" placeholder="Hora de inicio"ng-model="activityofevent.horaInicio">
                                        </div>
                                    </td>
 
                                    <td>
                                        <div class="form-group">
-                                           <input class="form-control " type="datetime" placeholder="Hora de final"ng-model="activityofevent.horaFinal">
+                                           <input class="form-control " type="time" placeholder="Hora de final"ng-model="activityofevent.horaFinal">
                                        </div>
                                    </td>
-
+<!--
                                    <td>
                                        <div class="form-group">
                                            <input class="form-control " type="text" placeholder="duracion"ng-model="activityofevent.duracion">
                                        </div>
-                                   </td>
+                                   </td>-->
                                </tr>
                            </tbody>
                        </table>

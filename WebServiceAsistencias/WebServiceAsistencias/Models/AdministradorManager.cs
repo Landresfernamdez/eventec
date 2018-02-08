@@ -41,7 +41,7 @@ namespace WebServiceAsistencias.Models
             reader.Close();
             if (admi != null)
             {
-                if (admi.tipoCuenta.Equals("s"))
+                if (admi.tipoCuenta.Equals("a"))
                 {
                     admi.success = true;
                     admi.token = "Andresf12serviceBeach";

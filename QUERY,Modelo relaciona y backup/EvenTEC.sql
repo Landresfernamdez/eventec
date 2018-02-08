@@ -103,15 +103,6 @@ create table Edecan_Actividades
 		CONSTRAINT		fk_cedula_Edecan_Actividades				foreign key (cedula) references persona,
 		CONSTRAINT		fk_idActividad_Edecan_Actividades			foreign key (idActividad) references actividad	
 );
-create table Persona_Actividades 
-(
-		cedula			varchar(50)		NOT NULL,
-		idActividad		T_Actividad		NOT NULL,
-
-		CONSTRAINT		pk_cedula_IdActividad_Persona_Actividades 	primary key (idActividad,cedula),
-		CONSTRAINT		fk_cedula_Persona_Actividades				foreign key (cedula) references persona,
-		CONSTRAINT		fk_idActividad_Persona_Actividades			foreign key (idActividad) references actividad	
-);
 create table Edecan_Eventos 
 (
 		cedula			varchar(50)		NOT NULL,
@@ -164,6 +155,7 @@ create table regSalida
 
 
 
+///////////////////Funciones
 
 CREATE PROCEDURE EliminarEvento
 @id_evento T_evento
@@ -186,6 +178,30 @@ SET NOCOUNT ON;
 		DELETE from Usuarios where cedula=@cedula and tipoCuenta='e';
 		DELETE from Persona where cedula=@cedula;
 END;
+
+
+
+
+CREATE PROCEDURE EliminarActdevento
+@id_evento T_evento,
+@id_actividad T_Actividad
+AS
+BEGIN
+SET NOCOUNT ON;
+		DELETE from Eventos_Actividades where idEvento=@id_evento and idActividad=@id_actividad;
+        DELETE from Actividad where idActividad =@id_actividad;
+END;
+
+
+CREATE PROCEDURE EliminarPersona
+@id_persona VARCHAR(50),
+@id_actividad T_Actividad
+AS
+BEGIN
+SET NOCOUNT ON;
+		DELETE FROM Persona_Actividades WHERE cedula=@id_persona and idActividad=@id_actividad;
+END;
+
 
 
 CREATE PROCEDURE AddActivitys
@@ -232,9 +248,15 @@ BEGIN
 
 				PRINT @Final;
 				PRINT @bandera;
-			INSERT INTO Actividad (idActividad,nombre,descripcion,fecha,cupo,lugar,horaInicio,horaFinal,duracion) VALUES (@Final,@nombre,@descripcion,@fecha,@cupo,@lugar,@horaInicio,@horaFinal,@duracion)
-
-			INSERT INTO Eventos_Actividades(idEvento,idActividad) VALUES (@idEvento,@Final)
+			
+			DECLARE @fechat DATE;
+			SET @fechat=@fecha;
+			DECLARE @temp1 VARCHAR(50);
+			SET @temp1=(SELECT idEvento FROM  Evento WHERE  fechaInicio<@fecha AND fechaFinal>@fecha AND idEvento=@idEvento); 
+			PRINT @temp1;
+			IF @temp1=@idEvento
+				INSERT INTO Actividad (idActividad,nombre,descripcion,fecha,cupo,lugar,horaInicio,horaFinal,duracion) VALUES (@Final,@nombre,@descripcion,@fecha,@cupo,@lugar,@horaInicio,@horaFinal,@duracion);
+				INSERT INTO Eventos_Actividades(idEvento,idActividad) VALUES (@idEvento,@Final); 
     End try
     Begin Catch
     End Catch
@@ -242,20 +264,42 @@ END
 GO
 
 
-EXEC AddActivitys 'no mames','se genero','2017-12-12','12','ugug','8:8:8','8:8:8','0:0:0','Ev-0002'
+SELECT * FROM Evento
+EXEC AddActivitys 'no mames','se genero','2017-12-6','12','ugug','8:8:8','8:8:8','0:0:0','Ev-1675'
+SELECT * FROM Actividad
 
-
-
-CREATE PROCEDURE EliminarActdevento
-@id_evento T_evento,
-@id_actividad T_Actividad
+CREATE PROCEDURE modificarActivitys
+    @nombre AS VARCHAR(50),
+    @descripcion AS VARCHAR(30),
+    @fecha AS VARCHAR(20),
+    @cupo AS INT,
+    @lugar AS VARCHAR(100) ,
+	@horaInicio AS VARCHAR(50),
+	@horaFinal AS VARCHAR(50),
+	@duracion AS VARCHAR(50),
+	@idActividad AS VARCHAR(50)
 AS
 BEGIN
-SET NOCOUNT ON;
-		DELETE from Eventos_Actividades where idEvento=@id_evento and idActividad=@id_actividad;
-        DELETE from Actividad where idActividad =@id_actividad;
-END;
+	
+    Begin Try
+			DECLARE @fechat DATE;
+			SET @fechat=@fecha;
+			DECLARE @idEvento VARCHAR(50);
+			SET @idEvento=(SELECT idEvento from Eventos_Actividades where idActividad=@idActividad);
+			DECLARE @temp1 VARCHAR(50);
+			SET @temp1=(SELECT idEvento FROM  Evento WHERE  fechaInicio<@fecha AND fechaFinal>@fecha AND idEvento=@idEvento); 
+			PRINT @temp1;
+			IF @temp1=@idEvento
+				Update Actividad set nombre=@nombre,descripcion = @descripcion,fecha = @fecha,cupo = @cupo,lugar=@lugar,horaInicio=@horaInicio,horaFinal=@horaFinal,duracion=@duracion where idActividad = @idActividad
+    End try
+    Begin Catch
+    End Catch
+END
+GO
 
+EXEC modificarActivitys 'no mames','se genero','2017-12-7','12','ugug','8:8:8','8:8:8','0:0:0','Act-2431'
+
+SELECT * FROM Actividad
 
 CREATE PROCEDURE AddEvents
 	@cedula varchar(50), 
@@ -304,24 +348,39 @@ BEGIN
 END
 GO
 
-
-
 EXEC AddEvents '203210321','reunionleli','eventecnomames','2017-12-12','2017-12-12'
 
 
-CREATE PROCEDURE EliminarPersona
-@id_persona VARCHAR(50),
-@id_actividad T_Actividad
+
+
+
+
+
+CREATE PROCEDURE [dbo].[AddAdmiEvent]
+@cedula VARCHAR(50),
+@id_evento T_evento
 AS
 BEGIN
 SET NOCOUNT ON;
-		DELETE FROM Persona_Actividades WHERE cedula=@id_persona and idActividad=@id_actividad;
+		INSERT INTO Administradores_Eventos(cedula,idEvento)VALUES(@cedula,@id_evento);
 END;
 
+
+CREATE PROCEDURE TodosEventos
+AS
+BEGIN
+	DECLARE @fecha DATE=(SELECT SYSDATETIME());
+	---SELECT @fecha
+	SELECT * FROM Evento
+	WHERE CAST(Evento.fechaInicio AS DATETIME) BETWEEN @fecha AND CAST(Evento.fechaFinal AS DATETIME)
+END;
+
+
+EXEC TodosEventos
+
+
+SELECT * FROM Evento
+
+
+SELECT * FROM Actividad
 SELECT * FROM Usuarios
-
-
-SELECT * FROM Persona_Actividades
-
-INSERT into Persona_Actividades VALUES('000000000','Act-0001')
-EXEC EliminarPersona '000000000','Act-0001'

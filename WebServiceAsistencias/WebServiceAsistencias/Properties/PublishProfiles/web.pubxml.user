@@ -6,65 +6,65 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\Alberth\Downloads\WebService</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\inetpub\wwwroot\WebService</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/es/System.Web.Helpers.resources.dll">
-      <publishTime>11/17/2017 13:15:54</publishTime>
+      <publishTime>02/07/2018 19:12:52</publishTime>
     </File>
     <File Include="bin/es/System.Web.Mvc.resources.dll">
-      <publishTime>11/17/2017 13:15:54</publishTime>
+      <publishTime>02/07/2018 19:12:52</publishTime>
     </File>
     <File Include="bin/es/System.Web.Razor.resources.dll">
-      <publishTime>11/17/2017 13:15:54</publishTime>
+      <publishTime>02/07/2018 19:12:52</publishTime>
     </File>
     <File Include="bin/es/System.Web.Webpages.Deployment.resources.dll">
-      <publishTime>11/17/2017 13:15:54</publishTime>
+      <publishTime>02/07/2018 19:12:52</publishTime>
     </File>
     <File Include="bin/es/System.Web.Webpages.Razor.resources.dll">
-      <publishTime>11/17/2017 13:15:54</publishTime>
+      <publishTime>02/07/2018 19:12:52</publishTime>
     </File>
     <File Include="bin/es/System.Web.Webpages.resources.dll">
-      <publishTime>11/17/2017 13:15:54</publishTime>
+      <publishTime>02/07/2018 19:12:52</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>10/20/2017 07:40:34</publishTime>
+      <publishTime>02/07/2018 19:12:52</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>11/17/2017 13:15:54</publishTime>
+      <publishTime>02/07/2018 19:12:52</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>11/17/2017 13:15:54</publishTime>
+      <publishTime>02/07/2018 19:12:52</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>11/17/2017 13:15:54</publishTime>
+      <publishTime>02/07/2018 19:12:52</publishTime>
     </File>
     <File Include="bin/System.Web.Webpages.Deployment.dll">
-      <publishTime>11/17/2017 13:15:54</publishTime>
+      <publishTime>02/07/2018 19:12:53</publishTime>
     </File>
     <File Include="bin/System.Web.Webpages.dll">
-      <publishTime>11/17/2017 13:15:54</publishTime>
+      <publishTime>02/07/2018 19:12:53</publishTime>
     </File>
     <File Include="bin/System.Web.Webpages.Razor.dll">
-      <publishTime>11/17/2017 13:15:54</publishTime>
+      <publishTime>02/07/2018 19:12:53</publishTime>
     </File>
     <File Include="bin/WebServiceAsistencias.dll">
-      <publishTime>11/29/2017 23:08:39</publishTime>
+      <publishTime>02/07/2018 19:28:11</publishTime>
     </File>
     <File Include="bin/WebServiceAsistencias.pdb">
-      <publishTime>11/10/2017 16:35:21</publishTime>
+      <publishTime>02/07/2018 19:28:11</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>11/17/2017 13:15:54</publishTime>
+      <publishTime>02/07/2018 19:12:53</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>11/17/2017 13:15:54</publishTime>
+      <publishTime>02/07/2018 19:12:53</publishTime>
     </File>
     <File Include="Views/web.config">
-      <publishTime>11/17/2017 13:15:54</publishTime>
+      <publishTime>02/07/2018 19:13:36</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/27/2017 16:51:23</publishTime>
+      <publishTime>02/07/2018 19:15:46</publishTime>
     </File>
   </ItemGroup>
 </Project>

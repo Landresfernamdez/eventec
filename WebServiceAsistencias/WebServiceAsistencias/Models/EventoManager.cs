@@ -116,7 +116,7 @@ namespace WebServiceAsistencias.Models
             reader.Close();
             return lista;
         }
-        public bool InsertarEvento(Event evt)
+        public bool InsertarEvento(Eventofuser evt)
         {
             SqlConnection con = new SqlConnection(cadenaConexion);
             con.Open();

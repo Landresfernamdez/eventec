@@ -231,6 +231,7 @@ namespace WebServiceAsistencias
                               id = UrlParameter.Optional
                           }
                          );
+            routes.MapRoute(
                         "AccesoEncargadoss",
                         "Encargados/Encargado/{ida}/{pass}",
                         new
@@ -241,16 +242,6 @@ namespace WebServiceAsistencias
                             pass = UrlParameter.Optional
                         }
                         );
-            routes.MapRoute(
-                                "AccesoPersona",
-                                "Personas/Persona/{id}",
-                                new
-                                {
-                                    controller = "Personas",
-                                    action = "Persona",
-                                    id = UrlParameter.Optional
-                                }
-                                );
 
             routes.MapRoute(
                 name: "Default",

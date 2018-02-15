@@ -372,7 +372,7 @@ BEGIN
 	DECLARE @fecha DATE=(SELECT SYSDATETIME());
 	---SELECT @fecha
 	SELECT * FROM Evento
-	WHERE CAST(Evento.fechaInicio AS DATETIME) BETWEEN @fecha AND CAST(Evento.fechaFinal AS DATETIME)
+	WHERE CAST(Evento.fechaInicio AS DATETIME) BETWEEN @fecha AND CAST(Evento.fechaFinal AS DATETIME) or  @fecha BETWEEN CAST(Evento.fechaInicio AS DATETIME) AND CAST(Evento.fechaFinal AS DATETIME)
 END;
 
 

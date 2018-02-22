@@ -62,7 +62,7 @@ angular.module('userModule')
         $scope.gestionarEvento=function(evento){
             $scope.event=evento;
             localStorage.setItem("event.id", JSON.stringify(evento.idEvento));
-            window.location.href = ('eventos/eventos.html');
+            window.location.href = ('eventos/eventos.html#/activities');
         };
         function getMonthFromString(mon){
             var d = Date.parse(mon + "1, 2012");

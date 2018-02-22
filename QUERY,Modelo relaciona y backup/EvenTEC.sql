@@ -366,13 +366,20 @@ SET NOCOUNT ON;
 END;
 
 
-CREATE PROCEDURE TodosEventos
+CREATE PROCEDURE [dbo].[TodosEventos]
+@filtro varchar(1)
 AS
 BEGIN
 	DECLARE @fecha DATE=(SELECT SYSDATETIME());
-	---SELECT @fecha
+	if (@filtro='p')
 	SELECT * FROM Evento
-	WHERE CAST(Evento.fechaInicio AS DATETIME) BETWEEN @fecha AND CAST(Evento.fechaFinal AS DATETIME) or  @fecha BETWEEN CAST(Evento.fechaInicio AS DATETIME) AND CAST(Evento.fechaFinal AS DATETIME)
+	WHERE CAST(Evento.fechaFinal AS DATETIME) < @fecha ORDER BY Evento.fechaInicio
+	else if (@filtro='f')
+	SELECT * FROM Evento
+	WHERE CAST(Evento.fechaInicio AS DATETIME) > @fecha ORDER BY Evento.fechaInicio
+	else
+	SELECT * FROM Evento
+	WHERE @fecha BETWEEN CAST(Evento.fechaInicio AS DATETIME) AND CAST(Evento.fechaFinal AS DATETIME) ORDER BY Evento.fechaInicio
 END;
 
 

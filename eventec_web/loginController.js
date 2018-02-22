@@ -12,7 +12,11 @@ angular.module('loginModule',["ngRoute","ngResource"])
          */
          
         $scope.doLogin = function () {
-            var ida=Base64.encode($scope.ida);
+            if ($scope.ida == "" || $scope.pass == "") {
+                alert("Campos no validos");
+                return;
+            }
+            var ida = Base64.encode($scope.ida);
             var pass=Base64.encode($scope.pass);
             console.log(ida);
             console.log(pass);

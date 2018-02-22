@@ -28,13 +28,13 @@ namespace WebServiceAsistencias.Controllers
             }
             return Json(new { Error = true, Message = "Operación HTTP desconocida" });
         }
-        public JsonResult EventosAdministradores(Event item)
+        public JsonResult EventosAdministradores(char filter, Event item)
         {
             switch (Request.HttpMethod)
             {
 
                 case "GET":
-                    return Json(eventsManager.ObtenerEventosAdministradores(), JsonRequestBehavior.AllowGet);
+                    return Json(eventsManager.ObtenerEventosAdministradores(filter), JsonRequestBehavior.AllowGet);
                 case "POST":
                     return Json(eventsManager.deleteEvento(item));
 

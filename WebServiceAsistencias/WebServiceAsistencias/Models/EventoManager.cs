@@ -46,7 +46,7 @@ namespace WebServiceAsistencias.Models
             reader.Close();
             return lista;
         }
-        public List<Event> ObtenerEventosAdministradores()
+        public List<Event> ObtenerEventosAdministradores(char filtro)
         {
             List<Event> lista = new List<Event>();
 
@@ -54,10 +54,10 @@ namespace WebServiceAsistencias.Models
 
             con.Open();
 
-            string sql = "EXEC TodosEventos";
+            string sql = "EXEC TodosEventos @filtro";
 
             SqlCommand cmd = new SqlCommand(sql, con);
-
+            cmd.Parameters.Add("@filtro", System.Data.SqlDbType.Char).Value = filtro;
             SqlDataReader reader =
                 cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
 

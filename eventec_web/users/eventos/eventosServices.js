@@ -28,11 +28,11 @@ angular.module('userModule')
 
     .factory('OperationsEventos',function($http){
     var respuesta ={
-        getEvento: function(callback){
+        getEvento: function(callback,filtro){
             var ida=localStorage.getItem("session.user");
             var getURL;
             if (localStorage.getItem("session.role")==='administrador')
-                getURL="http://localhost/Eventos"
+                getURL="http://localhost/Eventos?filter=a";
             else
                 getURL="http://localhost/Eventos/Encargado?ida="+ida;
             $http.get(

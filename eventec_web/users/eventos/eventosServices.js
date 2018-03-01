@@ -31,10 +31,7 @@ angular.module('userModule')
         getEvento: function(callback,filtro){
             var ida=localStorage.getItem("session.user");
             var getURL;
-            if (localStorage.getItem("session.role")==='administrador')
-                getURL="http://localhost/Eventos?filter=a";
-            else
-                getURL="http://localhost/Eventos/Encargado?ida="+ida;
+            getURL="http://localhost/Eventos?filter=p&ced="+ida;
             $http.get(
                 getURL
             ).success(function successCallback(response){

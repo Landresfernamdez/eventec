@@ -49,10 +49,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/07/2018 19:12:53</publishTime>
     </File>
     <File Include="bin/WebServiceAsistencias.dll">
-      <publishTime>02/22/2018 11:14:08</publishTime>
+      <publishTime>03/01/2018 09:09:47</publishTime>
     </File>
     <File Include="bin/WebServiceAsistencias.pdb">
-      <publishTime>02/22/2018 11:14:08</publishTime>
+      <publishTime>03/01/2018 09:09:47</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>02/07/2018 19:12:53</publishTime>

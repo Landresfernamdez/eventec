@@ -365,21 +365,50 @@ SET NOCOUNT ON;
 		INSERT INTO Administradores_Eventos(cedula,idEvento)VALUES(@cedula,@id_evento);
 END;
 
+-- =============================================
+-- Author:		Alberth Salas
+-- Create date: 1/3/2018
+-- Description:	Esta funcion obtiene todos los eventos encargados a un usuario
+-- =============================================
+CREATE PROCEDURE Eventos_De_Usuario
+@cedula varchar(50)
+ 
+AS BEGIN
+    if ((select dbo.Usuarios.tipoCuenta from dbo.Usuarios where dbo.Usuarios.cedula=cedula)='a')
+	select * from dbo.Evento;
+	else if ((select dbo.Usuarios.tipoCuenta from dbo.Usuarios where dbo.Usuarios.cedula=cedula)='m')
+	select dbo.Evento.idEvento,dbo.Evento.nombre,dbo.Evento.descripcion,dbo.Evento.fechaInicio,dbo.Evento.fechaFinal from (select * from dbo.Administradores_Eventos where dbo.Administradores_Eventos.cedula=cedula) as encargado
+	inner join dbo.Evento on dbo.Evento.idEvento = encargado.idEvento
+	else
+	select dbo.Evento.idEvento,dbo.Evento.nombre,dbo.Evento.descripcion,dbo.Evento.fechaInicio,dbo.Evento.fechaFinal from (select * from dbo.Edecan_Eventos where dbo.Edecan_Eventos.cedula=cedula) as edecan
+	inner join dbo.Evento on dbo.Evento.idEvento = edecan.idEvento;
+END
 
 CREATE PROCEDURE [dbo].[TodosEventos]
-@filtro varchar(1)
+@filtro varchar(1),
+@cedula varchar(50)
 AS
 BEGIN
 	DECLARE @fecha DATE=(SELECT SYSDATETIME());
+	---SELECT @fecha
+	Declare @Resul as Table 
+	(
+	[idEvento] [varchar](7) NOT NULL,
+	[nombre] [varchar](50) NOT NULL,
+	[descripcion] [varchar](200) NOT NULL,
+	[fechaInicio] [date] NOT NULL,
+	[fechaFinal] [date] NOT NULL
+	)
+	INSERT into @Resul EXEC dbo.Eventos_De_Usuario @cedula
 	if (@filtro='p')
-	SELECT * FROM Evento
-	WHERE CAST(Evento.fechaFinal AS DATETIME) < @fecha ORDER BY Evento.fechaInicio
+	SELECT * FROM @Resul as eventos_usuario
+	WHERE CAST(eventos_usuario.fechaFinal AS DATETIME) < @fecha ORDER BY eventos_usuario.fechaInicio
 	else if (@filtro='f')
-	SELECT * FROM Evento
-	WHERE CAST(Evento.fechaInicio AS DATETIME) > @fecha ORDER BY Evento.fechaInicio
+	SELECT * FROM @Resul as eventos_usuario
+	WHERE CAST(eventos_usuario.fechaInicio AS DATETIME) > @fecha ORDER BY eventos_usuario.fechaInicio
 	else
-	SELECT * FROM Evento
-	WHERE @fecha BETWEEN CAST(Evento.fechaInicio AS DATETIME) AND CAST(Evento.fechaFinal AS DATETIME) ORDER BY Evento.fechaInicio
+	SELECT * FROM @Resul as eventos_usuario
+	WHERE @fecha BETWEEN CAST(eventos_usuario.fechaInicio AS DATETIME) AND CAST(eventos_usuario.fechaFinal AS DATETIME) ORDER BY eventos_usuario.fechaInicio
 END;
 
 

@@ -113,22 +113,13 @@ namespace WebServiceAsistencias
                 );
             routes.MapRoute(
                  "AccesoEventosAdministradores",
-                 "Eventos/{filter}",
+                 "Eventos/{filter}/{CED}",
                  new
                  {
                      controller = "Eventos",
-                     action = "EventosAdministradores",
-                     filter = UrlParameter.Optional
-                 }
-                 );
-            routes.MapRoute(
-                 "AccesoEventosEncargados",
-                 "Eventos/Encargado/{ida}",
-                 new
-                 {
-                     controller = "Eventos",
-                     action = "EventosEncargados",
-                     ida = UrlParameter.Optional
+                     action = "Eventos",
+                     filter = UrlParameter.Optional,
+                     CED = UrlParameter.Optional
                  }
                  );
             routes.MapRoute(

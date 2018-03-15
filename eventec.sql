@@ -15,7 +15,7 @@ ALTER PROCEDURE [dbo].[agregarUsuario]
 AS 
 BEGIN
 	INSERT INTO Persona(cedula,nombre, apellido1,apellido2,edad,direccion,estado) VALUES (@ced,@nombre,@ap1,@ap2,@edad,@direc,0);
-	INSERT INTO Usuarios(cedula,correo,contraseña,tipoCuenta) VALUES (@ced,@correo,@pass,'u');
+	INSERT INTO Usuarios(cedula,correo,contraseÃ±a,tipoCuenta) VALUES (@ced,@correo,@pass,'u');
 END
 
 ---procedure para eliminar la actividad del usuario, por ello se aumenta el cupo de la actividad
@@ -64,7 +64,7 @@ BEGIN
 END;
 
 
----procedure para extraer las actividades en las que esta inscrito a las actividades
+---procedure para extraer las actividades en las que esta inscrito un usuario en especifico
 ALTER PROCEDURE [dbo].[usuarioActividades]
 (
  @idUser VARCHAR (50)

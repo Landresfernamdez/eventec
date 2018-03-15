@@ -1,187 +1,201 @@
-CREATE RULE R_Evento AS
-    (@idEvento like ('EV-[0-9][0-9][0-9][0-9]'));
-GO
-EXEC sp_addtype 'T_Evento', 'varchar (7)', 'not null';
-GO
-EXEC sp_bindrule 'R_Evento','T_Evento'
-GO
+CREATE RULE r_evento AS (@idEvento LIKE ('EV-[0-9][0-9][0-9][0-9]')); 
 
-CREATE RULE R_IdActividad AS
-    (@idActividad like ('Act-[0-9][0-9][0-9][0-9]'));
-GO
-EXEC sp_addtype 'T_Actividad', 'varchar (8)', 'not null';
-GO
-EXEC sp_bindrule 'R_IdActividad','T_Actividad'
-GO
+go 
 
-CREATE RULE R_Telefono AS
-    (@telefono like ('[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'))
-    or
-    (@telefono like ('([0-9][0-9][0-9])[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'));
-GO
-EXEC sp_addtype 'T_Telefono', 'varchar (14)', 'not null';
-GO
-EXEC sp_bindrule 'R_Telefono','T_Telefono'
-GO
+EXEC Sp_addtype 
+  'T_Evento', 
+  'varchar (7)', 
+  'not null'; 
 
-create table Persona
-(
-		cedula			varchar(50)			NOT NULL,
-		nombre			varchar(20)			NOT NULL,
-		apellido1		varchar(20)			NOT NULL,
-		apellido2		varchar(20)			NOT NULL,
-		edad			int			NOT NULL,
-		direccion		varchar(20)			NOT NULL,
-		estado          	varchar(1)          NOT NULL, 
-		CONSTRAINT		pk_cedula_Persona	primary key (cedula),
-);
+go 
 
-create table Evento 
-(
-		idEvento		T_Evento			NOT NULL,
-		nombre			varchar(50)			NOT NULL,
-		descripcion		varchar(200)		NOT NULL,
-		fechaInicio		date				NOT NULL,
-		fechaFinal		date				NOT NULL,
+EXEC Sp_bindrule 
+  'R_Evento', 
+  'T_Evento' 
 
-		CONSTRAINT		pk_idEvento_Evento	primary key (idEvento)
-);
+go 
 
-create table Actividad
-(
-		idActividad		T_Actividad					NOT NULL,
-		nombre			varchar(50)					NOT NULL,
-		descripcion		varchar(200)				NOT NULL,
-		fecha			date						NOT NULL,
-		cupo			int					NOT NULL,
-		lugar			varchar(200)				NOT NULL,
-		horaInicio		time						NOT NULL,
-		horaFinal		time						NOT NULL,
-		duracion		time						NOT NULL,
+CREATE RULE r_idactividad AS (@idActividad LIKE ('Act-[0-9][0-9][0-9][0-9]')); 
 
-		CONSTRAINT		pk_idActividad_Actividad	primary key (idActividad)
-);
+go 
 
-create table Telefono
-(
-		idTelefono		smallint					identity(1,1)				NOT NULL,
-		cedula			varchar(50)												NOT NULL,
-		telefono		T_Telefono,
+EXEC Sp_addtype 
+  'T_Actividad', 
+  'varchar (8)', 
+  'not null'; 
 
-		CONSTRAINT		pk_idTelefono_telefono		primary key (idTelefono),
-		CONSTRAINT		fk_cedula_Telefono			foreign key (cedula) references persona	
-);
+go 
 
-create table Usuarios 
-(
-		cedula			varchar(50)			NOT NULL,
-		contraseña		varchar(50)			NOT NULL,
-		tipoCuenta		char(1)				NOT NULL,
+EXEC Sp_bindrule 
+  'R_IdActividad', 
+  'T_Actividad' 
 
-		CONSTRAINT		pk_cedula_Usuarios	primary key (cedula),
-		CONSTRAINT		fk_cedula_Usuarios	foreign key (cedula) references persona	
-	
-);
+go 
 
-create table Administradores_Eventos 
-(
-		cedula			varchar(50)									NOT NULL,
-		idEvento		T_Evento									NOT NULL,
+CREATE RULE r_telefono AS (@telefono LIKE ( 
+'[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]')) OR (@telefono LIKE ( 
+'([0-9][0-9][0-9])[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]')); 
 
-		CONSTRAINT		pk_cedula_IdEvento_Administradores_Eventos 	primary key (idEvento,cedula),
-		CONSTRAINT		fk_cedula_Administradores_Eventos			foreign key (cedula) references persona,
-		CONSTRAINT		fk_idEvento_Administradores_Eventos			foreign key (idEvento) references Evento	
+go 
 
-);
+EXEC Sp_addtype 
+  'T_Telefono', 
+  'varchar (14)', 
+  'not null'; 
 
-create table Edecan_Actividades 
-(
-		cedula			varchar(50)		NOT NULL,
-		idActividad		T_Actividad		NOT NULL,
+go 
 
-		CONSTRAINT		pk_cedula_IdActividad_Edecan_Actividades 	primary key (idActividad,cedula),
-		CONSTRAINT		fk_cedula_Edecan_Actividades				foreign key (cedula) references persona,
-		CONSTRAINT		fk_idActividad_Edecan_Actividades			foreign key (idActividad) references actividad	
-);
-create table Edecan_Eventos 
-(
-		cedula			varchar(50)		NOT NULL,
-		idEvento		T_Evento		NOT NULL,
+EXEC Sp_bindrule 
+  'R_Telefono', 
+  'T_Telefono' 
 
-		CONSTRAINT		pk_cedula_IdEvento_Edecan_Actividades 	primary key (idEvento,cedula),
-		CONSTRAINT		fk_cedula_Edecan_Eventos				foreign key (cedula) references persona,
-		CONSTRAINT		fk_idEvento_Edecan_Eventos			foreign key (idEvento) references Evento
-);
-create table Matricula 
-(
-		cedula			varchar(50)		NOT NULL,
-		idActividad		T_Actividad		NOT NULL,
-
-		CONSTRAINT		pk_cedula_IActividad_Matricula 	primary key (idActividad,cedula),
-		CONSTRAINT		fk_cedula_Matricula				foreign key (cedula)		references persona,
-		CONSTRAINT		fk_idActividad_Matricula		foreign key (idActividad)	references actividad	
-);
-
-create table Eventos_Actividades 
-(
-		idEvento		T_Evento		NOT NULL,
-		idActividad		T_Actividad		NOT NULL,
-
-		CONSTRAINT		pk_IdEvento_IdActividad_Eventos_Actividades 	primary key (idActividad,idEvento),
-		CONSTRAINT		fk_idEvento_Eventos_Actividades					foreign key (idEvento)		references evento,	
-		CONSTRAINT		fk_idActividad_Eventos_Actividades				foreign key (idActividad)	references actividad	
-);
-
-create table regEntrada
-(
-		idActividad		T_Actividad		NOT NULL,
-		cedula			varchar(9)		NOT NULL,
-		fecha			date			default(GETDATE()),
-		hora			datetime		default(SYSDATETIME()),
-		CONSTRAINT              fk_cedula_HoraE_fecha          primary key (cedula,hora,fecha),
-		CONSTRAINT		fk_idActividad_regEntrada foreign key (idActividad) references actividad	
-
-);
-
-create table regSalida
-(
-		idActividad		T_Actividad		NOT NULL,
-		cedula			varchar(9)		NOT NULL,
-		fecha			date			default(GETDATE()),
-		hora			datetime		default(SYSDATETIME()),
-		CONSTRAINT              fk_cedula_HoraS_fecha          primary key (cedula,hora,fecha),
-		CONSTRAINT		fk_idActividad_regSalida foreign key (idActividad) references actividad			
-);
+go 
 
 
 
-///////////////////Funciones
-
-CREATE PROCEDURE EliminarEvento
-@id_evento T_evento
-AS
-BEGIN
-SET NOCOUNT ON;
-		DELETE from Eventos_Actividades where idEvento=@id_evento;
-		DELETE from Edecan_Eventos where idEvento=@id_evento;
-        DELETE from Evento where idEvento =@id_evento;
-END;
 
 
+CREATE TABLE Persona 
+  ( 
+     cedula      VARCHAR(50) NOT NULL, 
+     nombre      VARCHAR(20) NOT NULL, 
+     apellido1   VARCHAR(20) NOT NULL, 
+     apellido2   VARCHAR(20) NOT NULL, 
+     edad        INT NOT NULL, 
+     direccion   VARCHAR(20) NOT NULL, 
+     estado      VARCHAR(1) NOT NULL, 
+     contraseña VARCHAR(50) NOT NULL,
+	 correo VARCHAR(50) NOT NULL, 
+     CONSTRAINT pk_cedula_persona PRIMARY KEY (cedula), 
+  ); 
 
+CREATE TABLE Evento 
+  ( 
+     idEvento    T_EVENTO NOT NULL, 
+     nombre      VARCHAR(50) NOT NULL, 
+     descripcion VARCHAR(200) NOT NULL, 
+     fechaInicio DATE NOT NULL, 
+     fechaFinal  DATE NOT NULL, 
+     CONSTRAINT pk_idevento_evento PRIMARY KEY (idEvento) 
+  ); 
+
+CREATE TABLE Actividad 
+  ( 
+     idActividad            T_ACTIVIDAD NOT NULL, 
+     idEvento               T_EVENTO NOT NULL, 
+     nombre                 VARCHAR(50) NOT NULL, 
+     descripcion            VARCHAR(200) NOT NULL, 
+     cupo                   INT NOT NULL, 
+     duracion               TIME NOT NULL, 
+     porcentaje_aprobación INT NOT NULL, 
+     CONSTRAINT pk_idactividad_actividad PRIMARY KEY (idActividad), 
+     CONSTRAINT fk_idevento_evento FOREIGN KEY (idEvento) REFERENCES Evento ON DELETE CASCADE 
+  ); 
+
+CREATE TABLE Usuarios 
+  ( 
+     cedula     VARCHAR(50) NOT NULL, 
+     tipoCuenta CHAR(1) NOT NULL, 
+     CONSTRAINT pk_cedula_usuarios PRIMARY KEY (cedula), 
+     CONSTRAINT fk_cedula_usuarios FOREIGN KEY (cedula) REFERENCES Persona ON DELETE CASCADE
+  ); 
+
+CREATE TABLE Administradores_Eventos 
+  ( 
+     cedula   VARCHAR(50) NOT NULL, 
+     idEvento T_EVENTO NOT NULL, 
+     CONSTRAINT pk_cedula_idevento_administradores_eventos PRIMARY KEY (idEvento 
+     , cedula), 
+     CONSTRAINT fk_cedula_administradores_eventos FOREIGN KEY (cedula)  
+     REFERENCES persona  ON DELETE CASCADE, 
+     CONSTRAINT fk_idevento_administradores_eventos FOREIGN KEY (idEvento) 
+     REFERENCES Evento  ON DELETE CASCADE
+  ); 
+
+CREATE TABLE Edecan_Actividades 
+  ( 
+     cedula      VARCHAR(50) NOT NULL, 
+     idActividad T_ACTIVIDAD NOT NULL, 
+     CONSTRAINT pk_cedula_idactividad_edecan_actividades PRIMARY KEY ( 
+     idActividad, cedula), 
+     CONSTRAINT fk_cedula_edecan_actividades FOREIGN KEY (cedula) REFERENCES 
+     Usuarios(cedula)  ON DELETE CASCADE, 
+     CONSTRAINT fk_idactividad_edecan_actividades FOREIGN KEY (idActividad) 
+     REFERENCES actividad(idActividad)  ON DELETE CASCADE
+  ); 
+
+CREATE TABLE Matricula 
+  ( 
+     cedula      VARCHAR(50) NOT NULL, 
+     idActividad T_ACTIVIDAD NOT NULL, 
+     aprobado    CHAR(1) NOT NULL, 
+     estado      CHAR(1) NOT NULL 
+     CONSTRAINT pk_cedula_iactividad_matricula PRIMARY KEY (idActividad, cedula) 
+     , 
+     CONSTRAINT fk_cedula_matricula FOREIGN KEY (cedula) REFERENCES persona  ON DELETE CASCADE, 
+     CONSTRAINT fk_idactividad_matricula FOREIGN KEY (idActividad) REFERENCES 
+     actividad  ON DELETE CASCADE
+  ); 
+
+CREATE TABLE regEntrada 
+  ( 
+     idActividad T_ACTIVIDAD NOT NULL, 
+     cedula      VARCHAR(9) NOT NULL, 
+     fecha       DATE DEFAULT(Getdate()), 
+     hora        DATETIME DEFAULT(Sysdatetime()), 
+     CONSTRAINT fk_cedula_horae_fecha PRIMARY KEY (cedula, hora, fecha), 
+     CONSTRAINT fk_idactividad_regentrada FOREIGN KEY (idActividad) REFERENCES 
+     actividad  ON DELETE CASCADE
+  ); 
+
+CREATE TABLE regSalida 
+  ( 
+     idActividad T_ACTIVIDAD NOT NULL, 
+     cedula      VARCHAR(9) NOT NULL, 
+     fecha       DATE DEFAULT(Getdate()), 
+     hora        DATETIME DEFAULT(Sysdatetime()), 
+     CONSTRAINT fk_cedula_horas_fecha PRIMARY KEY (cedula, hora, fecha), 
+     CONSTRAINT fk_idactividad_regsalida FOREIGN KEY (idActividad) REFERENCES 
+     actividad  ON DELETE CASCADE
+  );
+CREATE TABLE inmuebles 
+  ( 
+     nombre       VARCHAR(200) NOT NULL, 
+     id_inmuebles INT IDENTITY (1, 1) NOT NULL, 
+     CONSTRAINT pk_inmuebles PRIMARY KEY(id_inmuebles) 
+  ) 
+CREATE TABLE horarios 
+  ( 
+     fecha       DATE NOT NULL, 
+     id_inmueble INT NOT NULL, 
+     horaInicio  TIME NOT NULL, 
+     horaFinal   TIME NOT NULL, 
+     idActividad T_ACTIVIDAD NOT NULL, 
+     CONSTRAINT pk_compuesta_existencia PRIMARY KEY(fecha, id_inmueble, 
+     horaInicio, horaFinal, idActividad), 
+     CONSTRAINT fk_inmueble_horario_actividad FOREIGN KEY(id_inmueble) 
+     REFERENCES inmuebles  ON DELETE CASCADE
+  ); 
+
+/*Eliminar edecan del sistema*/
 CREATE PROCEDURE EliminarEdecan
 @cedula varchar(50) 
 AS
 BEGIN
 SET NOCOUNT ON;
-		DELETE from Edecan_Actividades where cedula=@cedula;
-		DELETE from Usuarios where cedula=@cedula and tipoCuenta='e';
+		/*DELETE from Edecan_Actividades where cedula=@cedula;
+		DELETE from Usuarios where cedula=@cedula and tipoCuenta='e';*/
 		DELETE from Persona where cedula=@cedula;
 END;
 
 
 
 
+SELECT * FROM Persona
+
+
+
+/*Eliminar actividad de un evento*/
 CREATE PROCEDURE EliminarActdevento
 @id_evento T_evento,
 @id_actividad T_Actividad
@@ -201,8 +215,6 @@ BEGIN
 SET NOCOUNT ON;
 		DELETE FROM Persona_Actividades WHERE cedula=@id_persona and idActividad=@id_actividad;
 END;
-
-
 
 CREATE PROCEDURE AddActivitys
     @nombre AS VARCHAR(50),
@@ -263,10 +275,20 @@ BEGIN
 END
 GO
 
-
-SELECT * FROM Evento
+CREATE PROCEDURE EliminarEvento
+@id_evento T_evento
+AS
+BEGIN
+SET NOCOUNT ON;
+		DELETE from Eventos_Actividades where idEvento=@id_evento;
+		DELETE from Edecan_Eventos where idEvento=@id_evento;
+        DELETE from Evento where idEvento =@id_evento;
+END;
+SELECT * FROM Evento;
 EXEC AddActivitys 'no mames','se genero','2017-12-6','12','ugug','8:8:8','8:8:8','0:0:0','Ev-1675'
 SELECT * FROM Actividad
+
+
 
 CREATE PROCEDURE modificarActivitys
     @nombre AS VARCHAR(50),
@@ -297,7 +319,7 @@ BEGIN
 END
 GO
 
-EXEC modificarActivitys 'no mames','se genero','2017-12-7','12','ugug','8:8:8','8:8:8','0:0:0','Act-2431'
+EXEC modificarActivitys 'no mames','se genero','2017-12-8','12','ugug','8:8:8','8:8:8','0:0:0','Act-2431'
 
 SELECT * FROM Actividad
 
@@ -352,10 +374,6 @@ EXEC AddEvents '203210321','reunionleli','eventecnomames','2017-12-12','2017-12-
 
 
 
-
-
-
-
 CREATE PROCEDURE [dbo].[AddAdmiEvent]
 @cedula VARCHAR(50),
 @id_evento T_evento
@@ -377,10 +395,11 @@ END;
 
 
 EXEC TodosEventos
-
-
 SELECT * FROM Evento
-
-
 SELECT * FROM Actividad
 SELECT * FROM Usuarios
+
+SELECT * FROM Eventos_Actividades
+
+Select * from Edecan_Actividades
+

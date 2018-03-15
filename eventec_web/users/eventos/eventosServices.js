@@ -130,7 +130,6 @@ angular.module('userModule')
                         console.log("data");
                         console.log(data.data);
                         callback(true);
-
                     }
                 });
 

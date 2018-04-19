@@ -55,5 +55,48 @@ namespace WebServiceAsistencias.Models
             admi.tipoCuenta = "";
             return admi;
         }
+        public List<Persona> ObtenerAdministradores()
+        {
+            List<Persona> lista = new List<Persona>();
+
+            SqlConnection con = new SqlConnection(cadenaConexion);
+
+            con.Open();
+
+            string sql = "SELECT p.nombre,p.apellido1,p.apellido2,p.direccion,p.cedula FROM Persona as p inner join Usuarios as u on p.cedula=u.cedula and u.tipoCuenta='m'";
+
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            SqlDataReader reader =
+                cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+
+            while (reader.Read())
+            {
+                Persona persona = new Persona();
+                persona.nombre = reader.GetString(0);
+                persona.apellido1 = reader.GetString(1);
+                persona.apellido2 = reader.GetString(2);
+                persona.direccion = reader.GetString(3);
+                persona.cedula = reader.GetString(4);
+                lista.Add(persona);
+            }
+            reader.Close();
+            return lista;
+        }//Esta funcion accesa a la base de datos y asigna a un evento un administrador
+        public bool AsignarEventosAdministrador(AdministradorEvento evt)
+        {
+            SqlConnection con = new SqlConnection(cadenaConexion);
+            con.Open();
+            //string sql = "INSERT INTO Evento(idEvento,nombre,descripcion,fechaInicio,fechaFinal) VALUES (@id,@name,@desc,@fechI,@fechF)";
+            string sql = "EXEC AddAdmiEvent @cedula,@id_Evento";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.Parameters.Add("@cedula", System.Data.SqlDbType.NVarChar).Value = evt.cedula;
+            cmd.Parameters.Add("@id_Evento", System.Data.SqlDbType.NVarChar).Value = evt.idEvento;
+            int res = cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            return (res == 1);
+        }
     }
 }

@@ -14,17 +14,44 @@ namespace WebServiceAsistencias.Controllers
         {
             activityManager = new ActivitiesManager();
         }
-        public JsonResult Activity(string ida, Actividad item)
+        public JsonResult Activity(string id)
         {
             switch (Request.HttpMethod)
             {
                 case "GET":
-                    return Json(activityManager.ObtenerActividadesDeAdministrador(ida),
+                    return Json(activityManager.ObtenerActividadesDeEvento(id),
                                 JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new { Error = true, Message = "Operación HTTP desconocida" });
+        }
+        public JsonResult ActivityDelete(Act_event item)
+        {
+            switch (Request.HttpMethod)
+            {
+                
+                case "POST":
+                    return Json(activityManager.deleteActivity(item));
+            }
+
+            return Json(new { Error = true, Message = "Operación HTTP desconocida" });
+        }
+        public JsonResult ActivityAdd(Activityofevent item)
+        {
+            switch (Request.HttpMethod)
+            {
                 case "POST":
                     return Json(activityManager.InsertarActivity(item));
+            }
+            return Json(new { Error = true, Message = "Operación HTTP desconocida" });
+        }
+        public JsonResult ActivityUpdate(Actividad item)
+        {
+            switch (Request.HttpMethod)
+            {
 
-
+                case "POST":
+                    return Json(activityManager.modificarActivity(item));
             }
 
             return Json(new { Error = true, Message = "Operación HTTP desconocida" });

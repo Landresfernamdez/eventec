@@ -335,6 +335,7 @@ D:\eventec\WebServiceAsistencias\WebServiceAsistencias\obj\Debug\WebServiceAsist
 D:\eventec\WebServiceAsistencias\WebServiceAsistencias\obj\Debug\WebServiceAsistencias.csproj.CoreCompileInputs.cache
 D:\eventec\WebServiceAsistencias\WebServiceAsistencias\obj\Debug\WebServiceAsistencias.dll
 D:\eventec\WebServiceAsistencias\WebServiceAsistencias\obj\Debug\WebServiceAsistencias.pdb
+<<<<<<< HEAD
 D:\ProyectoGit\Eventec\eventec\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll.config
 D:\ProyectoGit\Eventec\eventec\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.dll
 D:\ProyectoGit\Eventec\eventec\WebServiceAsistencias\WebServiceAsistencias\bin\WebServiceAsistencias.pdb
@@ -363,3 +364,5 @@ D:\ProyectoGit\Eventec\eventec\WebServiceAsistencias\WebServiceAsistencias\obj\D
 D:\ProyectoGit\Eventec\eventec\WebServiceAsistencias\WebServiceAsistencias\obj\Debug\WebServiceAsistencias.csproj.CopyComplete
 D:\ProyectoGit\Eventec\eventec\WebServiceAsistencias\WebServiceAsistencias\obj\Debug\WebServiceAsistencias.dll
 D:\ProyectoGit\Eventec\eventec\WebServiceAsistencias\WebServiceAsistencias\obj\Debug\WebServiceAsistencias.pdb
+=======
+>>>>>>> CambiosAlberth

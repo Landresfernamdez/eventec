@@ -100,6 +100,7 @@ angular.module('userModule')
             else if($scope.event.fechaInicio>$scope.event.fechaFinal){
                 alert("La fecha de inicio debe ser menor a la fecha final");
             }
+
         };
         $scope.actualizar = function(){
             OperationsEventos.updateEvents($scope.event,function(res){

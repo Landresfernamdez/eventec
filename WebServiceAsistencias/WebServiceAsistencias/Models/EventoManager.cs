@@ -122,8 +122,14 @@ namespace WebServiceAsistencias.Models
             SqlConnection con = new SqlConnection(cadenaConexion);
             con.Open();
             //string sql = "INSERT INTO Evento(idEvento,nombre,descripcion,fechaInicio,fechaFinal) VALUES (@id,@name,@desc,@fechI,@fechF)";
+<<<<<<< HEAD
             string sql = "EXEC AddEvents @name,@desc,@fechI,@fechF";
             SqlCommand cmd = new SqlCommand(sql, con);
+=======
+            string sql = "EXEC AddEvents @cedula,@name,@desc,@fechI,@fechF";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.Parameters.Add("@cedula", System.Data.SqlDbType.NVarChar).Value = evt.cedula;
+>>>>>>> CambiosAlberth
             cmd.Parameters.Add("@name", System.Data.SqlDbType.NVarChar).Value = evt.nombre;
             cmd.Parameters.Add("@desc", System.Data.SqlDbType.NVarChar).Value = evt.descripcion;
             cmd.Parameters.Add("@fechI", System.Data.SqlDbType.NVarChar).Value = evt.fechaInicio;

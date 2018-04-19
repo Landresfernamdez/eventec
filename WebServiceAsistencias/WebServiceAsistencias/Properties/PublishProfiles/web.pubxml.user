@@ -50,12 +50,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/WebServiceAsistencias.dll">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <publishTime>03/15/2018 10:55:00</publishTime>
 =======
+=======
+>>>>>>> CambiosAlberth
       <publishTime>03/01/2018 09:09:47</publishTime>
     </File>
     <File Include="bin/WebServiceAsistencias.pdb">
       <publishTime>03/01/2018 09:09:47</publishTime>
+<<<<<<< HEAD
+>>>>>>> CambiosAlberth
+=======
 >>>>>>> CambiosAlberth
     </File>
     <File Include="Global.asax">

@@ -40,6 +40,37 @@ namespace WebServiceAsistencias.Models
             }
             return null;
         }
+        public List<Persona> ObtenerEdecanes()
+        {
+            List<Persona> lista = new List<Persona>();
+
+            SqlConnection con = new SqlConnection(cadenaConexion);
+
+            con.Open();
+
+            string sql = "select * from Persona ";
+
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            SqlDataReader reader =
+                cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+
+            while (reader.Read())
+            {
+                Persona persona = new Persona();
+                persona.cedula = reader.GetString(0);
+                persona.nombre = reader.GetString(1);
+                persona.apellido1 = reader.GetString(2);
+                persona.apellido2 = reader.GetString(3);
+                persona.edad = reader.GetInt32(4); 
+                persona.direccion = reader.GetString(5); ;
+                persona.estado = reader.GetString(6); ;
+
+                lista.Add(persona);
+            }
+            reader.Close();
+            return lista;
+        }
         public Usuario ObtenerAdmi(string id, string pass)
         {
             Usuario admi = null;
@@ -69,6 +100,67 @@ namespace WebServiceAsistencias.Models
                 return admi;
             }
             return null;
+        }
+        public bool InsertarPersona(Persona per)
+        {
+            SqlConnection con = new SqlConnection(cadenaConexion);
+            con.Open();
+            string sql = "INSERT INTO Persona(cedula,nombre,apellido1,apellido2,estado,edad,direccion) VALUES (@cedula,@nombre,@primerapellido,@segundoapellido,@estado,@edad,@direccion)";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.Parameters.Add("@cedula", System.Data.SqlDbType.NVarChar).Value = per.cedula;
+            cmd.Parameters.Add("@nombre", System.Data.SqlDbType.NVarChar).Value = per.nombre;
+            cmd.Parameters.Add("@primerapelllido", System.Data.SqlDbType.NVarChar).Value = per.apellido1;
+            cmd.Parameters.Add("@segundoapellido", System.Data.SqlDbType.NVarChar).Value = per.apellido2;
+            cmd.Parameters.Add("@estado", System.Data.SqlDbType.NVarChar).Value = per.estado;
+            cmd.Parameters.Add("@edad", System.Data.SqlDbType.NVarChar).Value = per.edad;
+            cmd.Parameters.Add("@direccion", System.Data.SqlDbType.NVarChar).Value = per.direccion;
+            int res = cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            return (res == 1);
+        }
+        public bool InsertarEdecan(Usuario usua)
+        {
+            SqlConnection con = new SqlConnection(cadenaConexion);
+            con.Open();
+            string sql = "INSERT INTO Usuario(cedula,contrasena,tipoCuenta) VALUES (@cedula,@contraseña,@tipoCuenta)";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.Parameters.Add("@cedula", System.Data.SqlDbType.NVarChar).Value =usua.cedula;
+            cmd.Parameters.Add("@contraseña", System.Data.SqlDbType.NVarChar).Value = usua.contraseña;
+            cmd.Parameters.Add("@tipoCuenta", System.Data.SqlDbType.NVarChar).Value = usua.tipoCuenta;
+            int res = cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            return (res == 1);
+        }
+        public bool modificarEdecanActividades(string cedula,string idActividad)
+        {
+            SqlConnection con = new SqlConnection(cadenaConexion);
+            con.Open();
+            string sql = "INSERT INTO Edecan_Actividades(cedula,idActividad)VALUES(@cedula,@idActividad)";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.Parameters.Add("@cedula", System.Data.SqlDbType.NVarChar).Value =cedula ;
+            cmd.Parameters.Add("@idActividad", System.Data.SqlDbType.NVarChar).Value = idActividad;
+            int res = cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            return (res == 1);
+        }
+        public bool deleteEdecan(Persona per)
+        {
+            SqlConnection con = new SqlConnection(cadenaConexion);
+            con.Open();
+            string sql = "GO EXEC EliminarEdecan @ced";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.Parameters.Add("@ced", System.Data.SqlDbType.NVarChar).Value = per.cedula;
+            int res = cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            return (res == 1);
         }
 
     }

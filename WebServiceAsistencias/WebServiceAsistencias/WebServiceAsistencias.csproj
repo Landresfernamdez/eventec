@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -87,12 +88,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ActivitiesController.cs" />
     <Compile Include="Controllers\AdministradoresController.cs" />
+    <Compile Include="Controllers\EncargadosController.cs" />
     <Compile Include="Controllers\PersonasController.cs" />
     <Compile Include="Controllers\RegistersController.cs" />
     <Compile Include="Controllers\RegistrosController.cs" />
     <Compile Include="Models\ActivitiesManager.cs" />
+    <Compile Include="Models\Activityofevent.cs" />
+    <Compile Include="Models\Act_event.cs" />
+    <Compile Include="Models\AdministradorEvento.cs" />
+    <Compile Include="Models\EncargadoManager.cs" />
     <Compile Include="Models\AdministradorManager.cs" />
     <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\Eventofuser.cs" />
+    <Compile Include="Models\PersonaActividad.cs" />
     <Compile Include="Models\PersonaManager.cs" />
     <Compile Include="Models\EventoManager.cs" />
     <Compile Include="Controllers\EventosController.cs" />

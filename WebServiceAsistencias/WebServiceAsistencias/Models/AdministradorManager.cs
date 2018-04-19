@@ -27,8 +27,7 @@ namespace WebServiceAsistencias.Models
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.Parameters.Add("@idadmi", System.Data.SqlDbType.NVarChar).Value = id2;
             cmd.Parameters.Add("@pass", System.Data.SqlDbType.NVarChar).Value = pass2;
-            SqlDataReader reader =
-                cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+            SqlDataReader reader =cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
 
             if (reader.Read())
             {

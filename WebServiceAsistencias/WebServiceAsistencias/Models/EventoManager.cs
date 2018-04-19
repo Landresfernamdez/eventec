@@ -46,7 +46,7 @@ namespace WebServiceAsistencias.Models
             reader.Close();
             return lista;
         }
-        public List<Event> ObtenerEventosAdministradores()
+        public List<Event> todosEventos(string cedula,string filtro)
         {
             List<Event> lista = new List<Event>();
 
@@ -54,13 +54,13 @@ namespace WebServiceAsistencias.Models
 
             con.Open();
 
-            string sql = "EXEC TodosEventos";
+            string sql = "EXEC TodosEventos @cedula,@filtro";
 
             SqlCommand cmd = new SqlCommand(sql, con);
-
+            cmd.Parameters.Add("@cedula", System.Data.SqlDbType.NVarChar).Value = cedula;
+            cmd.Parameters.Add("@filtro", System.Data.SqlDbType.NVarChar).Value = filtro;
             SqlDataReader reader =
                 cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
-
             while (reader.Read())
             {
                 Event evento = new Event();
@@ -81,6 +81,7 @@ namespace WebServiceAsistencias.Models
             reader.Close();
             return lista;
         }
+        
         public bool InsertarEvento(Eventofuser evt)
         {
             SqlConnection con = new SqlConnection(cadenaConexion);
@@ -95,7 +96,6 @@ namespace WebServiceAsistencias.Models
             int res = cmd.ExecuteNonQuery();
     
             con.Close();
-
             return (res == 1);
         }
         public bool modificarEvento(Event evt)

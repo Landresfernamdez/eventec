@@ -113,9 +113,26 @@ angular.module('userModule')
         $scope.actualizarEvento = function(evento){
             $scope.event=evento;
         };
-        $scope.getlistaEventos = OperationsEventos.getEvento(function(res){
-            $scope.listaEventos=res;
+        
+        $scope.getlistaEventos =function getlistaEventos(){
+            var tipo='';
+            if(document.getElementById("select_categoria_evento").value=='Futuros'){
+                tipo='f';
+            }
+            if(document.getElementById("select_categoria_evento").value=='Pasados'){
+                tipo='p';
+            }
+            if(document.getElementById("select_categoria_evento").value=='Todos'){
+                tipo='t';
+            }
+            var filtro={filtro:tipo
+            ,cedula:sessionStorage.getItem("user")}; 
+            console.log(filtro);
+            OperationsEventos.getEvento(filtro.cedula,filtro.tipo,function(res){
+                $scope.listaEventos=res;
         });
+        }
+        $scope.getlistaEventos();
         $scope.eliminar = function deleteEvento(event){
             OperationsEventos.deleteEvento(event,function(response){
                 if(response.success){
@@ -239,6 +256,7 @@ angular.module('userModule')
             });
         };
         $scope.getlistaAdministradores();
+        
         $scope.asignarAdministrador=function asignarAdministrador(cedula){
             console.log("ced:"+cedula+","+"id:"+$scope.event.idEvento);
             var AdministradorEvento={

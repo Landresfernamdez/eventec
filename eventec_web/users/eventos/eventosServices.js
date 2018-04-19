@@ -28,9 +28,9 @@ angular.module('userModule')
     .factory('OperationsEventos',function($http){
 
     var respuesta ={
-        getEvento: function(callback){
+        getEvento:function(cedula,filtro,callback){
             $http.get(
-                "http://localhost/Eventos"
+                "http://localhost/Eventos/EventosTodos?cedula="+cedula+"&filtro="+filtro
             ).success(function successCallback(response){
                 // Esta funcion es la que se ejecuta
                 // cuando la peticion es exitosa
@@ -40,8 +40,7 @@ angular.module('userModule')
                 //Se devuelve un callback el cual se ejecuta en el controller
                 console.log(response);
                 callback(response);
-            });
-        },
+            });},
         deleteEvento:function(evento,callback){
             $http({
                 method  : 'POST',
@@ -92,7 +91,7 @@ angular.module('userModule')
                         console.log("set message error", data.errors)
                         alert("Se ha producido un error en la update");
                         callback(false);
-                    } else {
+                    } else{
                         alert("La update fue exitosa");
                         callback(true);
                     }

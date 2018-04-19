@@ -1,6 +1,3 @@
-/**
- * Created by Andres on 3/15/2018.
- */
 angular.module('loginModule',["ngRoute","ngResource"])
     .controller('loginController', function($scope,$http,$location) {
         // modelo de datos.
@@ -23,10 +20,11 @@ angular.module('loginModule',["ngRoute","ngResource"])
                 method:"GET",
                 url: "http://localhost/Administradores/Administrador?ida="+ida+"&pass="+pass
             }).then(function mySucces(response){
+                console.log(response.data);
                 var estado=response.data;
                 if(estado.success==true){
                     user.id=$scope.ida;
-                    saveSession(user);
+                    saveSession($scope.ida);
                     window.location.href = ('users/index.html');
                 }
                 else{
@@ -39,8 +37,8 @@ angular.module('loginModule',["ngRoute","ngResource"])
          * Guarda la sesión en el almacenamiento local del navegador.
          * @param json JSON de origen.
          */
-        function saveSession(json) {
-            sessionStorage.setItem("session.user",json.id);
+        function saveSession(id) {
+            sessionStorage.setItem("user",id);
             console.log("Sesión guardada.");
         }
     });

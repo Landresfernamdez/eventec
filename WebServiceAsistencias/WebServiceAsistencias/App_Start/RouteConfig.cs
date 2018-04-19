@@ -111,15 +111,16 @@ namespace WebServiceAsistencias
                     pass = UrlParameter.Optional
                 }
                 );
+            
             routes.MapRoute(
-                 "AccesoEventosAdministradores",
-                 "Eventos",
-                 new
-                 {
-                     controller = "Eventos",
-                     action = "EventosAdministradores"
-                 }
-                 );
+                "AccesoEventosTodos",
+                "Evento/EventosTodos/{cedula}/{filtro}",
+                new
+                {
+                    controller = "Eventos",
+                    action = "EventosTodos"
+                }
+                );
             routes.MapRoute(
                   "AccesoEventosAdministradoresUpdate",
                   "EventosUpdate",

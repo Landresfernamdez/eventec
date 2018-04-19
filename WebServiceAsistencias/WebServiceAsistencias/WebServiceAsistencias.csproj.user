@@ -15,6 +15,10 @@
     <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <UseGlobalApplicationHostFile />
+<<<<<<< HEAD
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
+=======
+>>>>>>> CambiosAlberth
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

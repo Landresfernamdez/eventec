@@ -7315,7 +7315,7 @@ fieldset[disabled] .form-control {
         font-weight: 600;
         padding: 8px 16px; }
       .sidebar .menu .list i.material-icons {
-        margin-top: 4px; }
+        margin-top: 4px; width: 24px; height: 30px; }
       .sidebar .menu .list .menu-toggle:after, .sidebar .menu .list .menu-toggle:before {
         position: absolute;
         top: calc(50% - 14px);

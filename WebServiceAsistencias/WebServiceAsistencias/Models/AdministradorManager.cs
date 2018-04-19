@@ -17,7 +17,7 @@ namespace WebServiceAsistencias.Models
 
             con.Open();
 
-            string sql = "SELECT a.cedula, a.contraseña,a.tipoCuenta from Usuarios as a where a.cedula=@idadmi and a.contraseña=@pass";
+            string sql = "SELECT a.cedula, p.contraseña,a.tipoCuenta from Usuarios as a inner join Persona as p on p.cedula=a.cedula and p.cedula=@idadmi and p.contraseña=@pass";
 
             String b64 = HttpServerUtility.UrlTokenEncode(ida);
             String id2 = Encoding.UTF8.GetString(HttpServerUtility.UrlTokenDecode(b64));
